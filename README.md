@@ -39,6 +39,7 @@ To build documentation (enabled with `--with-docs` flag), the following packages
   * `w3m`<sup>2</sup>
 
 *1*: reciprocal dependency is not resolved at the present time but it does not affect the build process
+<br>
 *2*: currently does not build on Linux
 
 ## Details
