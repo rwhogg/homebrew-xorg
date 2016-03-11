@@ -15,8 +15,11 @@ class Xorg < Formula
   depends_on "fontconfig"         => :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
 
-  depends_on :python   => :build if !build.with?("python3")
-  depends_on :python3  => :build if  build.with?("python3")
+  if build.with?("python3")
+    depends_on :python3      => :build
+  else
+    depends_on :python       => :build
+  end
 
   args  = %W[]
   args << "with-check"  if build.with?("check")
@@ -46,6 +49,10 @@ class Xorg < Formula
     elsif r == "xtrans"
       args2 = args
       args2 << "--with-docs" if build.with?("docs")
+      depends_on r => args2
+    elsif r == "xcb-proto"
+      args2 = args
+      args2 << "--with-python3" if build.with?("python3")
       depends_on r => args2
     else
       depends_on r => args

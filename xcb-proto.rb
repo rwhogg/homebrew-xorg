@@ -7,14 +7,16 @@ class XcbProto < Formula
   
   option "with-check",  "Run a check before install"
   option "with-tests",  "Run tests upon installation"
-  option "with-python2","Build with python2"
-  option "with-python3","Build with python3"
+  option "with-python3","Build with python3 (default version is used otherwise)"
 
   # depends_on :autoconf
   depends_on "pkg-config"  => :build
 
-  depends_on :python      => :build if build.with?("python2") || !build.with?("python3")
-  depends_on :python3     => :build if build.with?("python3")
+  if build.with?("python3")
+    depends_on :python3      => :build
+  else
+    depends_on :python       => :build
+  end
 
   depends_on "libxml2"    => :build if build.with?("tests") # to run tests
 
