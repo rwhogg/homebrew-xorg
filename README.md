@@ -52,6 +52,13 @@ To build documentation, use `--with-docs` flag, _i.e._:
 brew install xorg --with-docs
 ```
 
+This will install `xorg-docs` package and enable the following dependencies: `fop`, `libxslt`, `xmlto`. Additional dependency on `asciidoc` can be requested with `--with-asciidoc` flag.
+To see the list of optional flags when compiling libraries with documentation, use:
+
+```bash
+brew info xorg --with-docs
+```
+
 To use `python3` when building `xcb-proto` package, use `--with-python3` flag, _i.e._:
 
 ```bash
@@ -70,6 +77,13 @@ You can also build static libraries (though, this is neither required nor recomm
 brew install xorg --with-static
 ```
 
-## Issues
+You can combine all the options (flags) above, _i.e._:
 
-Currently, reciprocal dependency with `fop`
+```bash
+brew install xorg --with-docs --with-python3 --with-check --with-static
+```
+
+## Issues / Ongoing work
+
+* Reciprocal dependency with `fop` is not resolved. As a result, not all documentation might be built.
+* Provide other Xorg packages 
