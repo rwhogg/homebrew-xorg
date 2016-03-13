@@ -19,11 +19,9 @@ class XorgDocs < Formula
     args << "--enable-docs"      if !build.without?("docs")
     args << "--enable-specs"     if !build.without?("specs")
 
-
     system "./configure", *args
     system "make"
     system "make", "check"   if build.with?("check")
     system "make", "install"
-
   end
 end

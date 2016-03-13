@@ -20,9 +20,6 @@ class Libxcb < Formula
   depends_on "check"   => :build if build.with?("tests")
   depends_on "libxslt" => [:build, :optional]
 
-
-
-
   def install
     args = %W[
       --prefix=#{prefix}
@@ -33,8 +30,6 @@ class Libxcb < Formula
     args << "--without-doxygen" if build.without?("doxygen")
 	  args << "--disable-static" if !build.with?("static")
 
-
-
     ## Get rid of dependency on libpthread-stubs
     inreplace "configure", /pthread-stubs/, ""
 
@@ -42,6 +37,5 @@ class Libxcb < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end

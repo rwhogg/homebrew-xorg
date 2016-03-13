@@ -23,6 +23,5 @@ class Fontsproto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

@@ -23,6 +23,5 @@ class Dri2proto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

@@ -23,6 +23,5 @@ class Randrproto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end
