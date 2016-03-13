@@ -26,6 +26,8 @@ class Libxcb < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --enable-xinput
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
     args << "--without-doxygen" if build.without?("doxygen")
 	  args << "--disable-static" if !build.with?("static")
