@@ -19,6 +19,8 @@ class Bigreqsproto < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-silent-rules
+      --disable-dependency-tracking
     ]
 
     system "./configure", *args
