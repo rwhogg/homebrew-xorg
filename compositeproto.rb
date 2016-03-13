@@ -23,6 +23,5 @@ class Compositeproto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

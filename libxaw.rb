@@ -24,7 +24,6 @@ class Libxaw < Formula
   depends_on "libxau"     =>  :run
   depends_on "libxdmcp"   =>  :run
 
-
   def install
     args = %W[
       --prefix=#{prefix}
@@ -37,6 +36,5 @@ class Libxaw < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end

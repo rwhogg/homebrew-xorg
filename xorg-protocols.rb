@@ -29,5 +29,4 @@ class XorgProtocols < Formula
     ohai "Xorg Protocols have been installed!"
     prefix.install "x7proto.html"
   end
-
 end

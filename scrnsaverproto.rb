@@ -23,6 +23,5 @@ class Scrnsaverproto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

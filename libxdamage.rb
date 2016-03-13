@@ -20,7 +20,6 @@ class Libxdamage < Formula
   depends_on "libxcb"     =>  :run
   depends_on "libxdmcp"   =>  :run
 
-
   def install
     args = %W[
       --prefix=#{prefix}
@@ -33,6 +32,5 @@ class Libxdamage < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end

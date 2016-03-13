@@ -20,7 +20,6 @@ class XcbProto < Formula
 
   depends_on "libxml2"    => :build if build.with?("tests") # to run tests
 
-
   def install
     args = %W[
       --prefix=#{prefix}
@@ -32,6 +31,5 @@ class XcbProto < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end

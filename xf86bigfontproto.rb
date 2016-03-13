@@ -23,6 +23,5 @@ class Xf86bigfontproto < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

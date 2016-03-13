@@ -14,7 +14,7 @@ class Libxdmcp < Formula
   depends_on "xmlto"              => [:build, :optional]
   depends_on "asciidoc"           => [:build, :optional]
 
-  args  = %W[]
+  args = %W[]
   args << "without-xorg-sgml-doctools" if build.without?("xorg-sgml-doctools")
   args << "with-fop"                   if build.with?("fop")
   args << "with-libxslt"               if build.with?("libxslt")
@@ -37,6 +37,5 @@ class Libxdmcp < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end
