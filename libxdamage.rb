@@ -12,10 +12,14 @@ class Libxdamage < Formula
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
   depends_on "damageproto" => :build
-  depends_on "libxfixes"  =>  :build
+  depends_on "libxfixes"
   depends_on "fixesproto" =>  :build
   depends_on "xextproto"  =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libx11"
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
+
 
   def install
     args = %W[

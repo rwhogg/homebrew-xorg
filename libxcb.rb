@@ -12,9 +12,9 @@ class Libxcb < Formula
 
   # depends_on :autoconf
   depends_on "pkg-config"  => :build
-  depends_on "libxau"      => :build
+  depends_on "libxau"
   depends_on "xcb-proto"   => :build
-  depends_on "libXdmcp" => :recommended
+  depends_on "libxdmcp"    => :recommended
 
   depends_on "doxygen" => :build if !build.without?("doxygen")
   depends_on "check"   => :build if build.with?("tests")

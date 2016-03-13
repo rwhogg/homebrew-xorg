@@ -13,11 +13,14 @@ class Libxrandr < Formula
   depends_on "fontconfig" =>  :build
 
   depends_on "libxrender" =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libx11"
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
   depends_on "randrproto" =>  :build
-  depends_on "libxext"    =>  :build
+  depends_on "libxext"
   depends_on "xextproto"  =>  :build
-  depends_on "libxrender" =>  :build
+  depends_on "libxrender"
   depends_on "renderproto" => :build
 
   def install

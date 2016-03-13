@@ -12,10 +12,14 @@ class Libxmu < Formula
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
 
-  depends_on "libxt" =>  :build
-  depends_on "libxext" =>  :build
-  depends_on "libx11" =>  :build
+  depends_on "libxt"
+  depends_on "libxext"
+  depends_on "libx11"
+  depends_on "libxau"    =>  :run
+  depends_on "libxcb"    =>  :run
   depends_on "xextproto" =>  :build
+  depends_on "libice"    =>  :run
+  depends_on "libsm"     =>  :run
 
   def install
     args = %W[

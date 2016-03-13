@@ -11,10 +11,13 @@ class Libxcursor < Formula
   depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
-  depends_on "libxrender" =>  :build
-  depends_on "libxfixes"  =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libxrender"
+  depends_on "libxfixes"
+  depends_on "libx11"
   depends_on "fixesproto" =>  :build
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

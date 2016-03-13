@@ -13,7 +13,7 @@ class Libsm < Formula
   depends_on "fontconfig" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  depends_on "libice"     =>  :build
+  depends_on "libice"
   depends_on "xtrans"     =>  :build
 
   def install

@@ -7,7 +7,7 @@ class XcbUtil < Formula
   option "with-static", "Build static libraries"
 
   depends_on "pkg-config" => :build
-  depends_on "libxcb"     => :build
+  depends_on "libxcb"
   depends_on "libxdmcp"   => :run
   depends_on "libxau"     => :run
 

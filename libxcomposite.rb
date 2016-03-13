@@ -12,8 +12,11 @@ class Libxcomposite < Formula
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
   depends_on "compositeproto" =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libx11"
   depends_on "libxfixes"  =>  :build
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

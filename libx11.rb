@@ -13,9 +13,11 @@ class Libx11 < Formula
   depends_on "fontconfig" =>  :build
   depends_on "xextproto"  =>  :build
   depends_on "xtrans"     =>  :build
-  depends_on "libxcb"     =>  :build
+  depends_on "libxcb"
   depends_on "kbproto"    =>  :build
   depends_on "inputproto" =>  :build
+  depends_on "libxau"     =>  :run
+  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

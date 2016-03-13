@@ -13,8 +13,12 @@ class Libxt < Formula
   depends_on "fontconfig" =>  :build
   
   depends_on "libsm"      =>  :build
-  depends_on "libice"     =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libice"
+  depends_on "libsm"      =>  :run
+  depends_on "libx11"
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
   depends_on "xproto"     =>  :build
   depends_on "kbproto"    =>  :build
 

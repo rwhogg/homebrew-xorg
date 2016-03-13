@@ -12,7 +12,12 @@ class Libxtst < Formula
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
 
-  depends_on "libxi"      =>  :build
+  depends_on "libxi"
+  depends_on "libx11"     =>  :run
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
+  depends_on "libxext"    =>  :run
 
   def install
     args = %W[

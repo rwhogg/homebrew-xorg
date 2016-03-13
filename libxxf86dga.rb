@@ -13,9 +13,12 @@ class Libxxf86dga < Formula
   depends_on "fontconfig" =>  :build
 
   depends_on "xproto"     =>  :build
-  depends_on "libx11"     =>  :build
+  depends_on "libx11"
+  depends_on "libxau"     =>  :run
+  depends_on "libxcb"     =>  :run
+  depends_on "libxdmcp"   =>  :run
   depends_on "xextproto"  =>  :build
-  depends_on "libxext"    =>  :build
+  depends_on "libxext"
   depends_on "xf86dgaproto" => :build
 
   def install
