@@ -33,6 +33,5 @@ class Xtrans < Formula
 
     system "./configure", *args
     system "make", "install"
-
   end
 end

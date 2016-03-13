@@ -8,7 +8,7 @@ class Xbitmaps < Formula
   depends_on "util-macros" => :build
 
   def install
-        args = %W[
+    args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}

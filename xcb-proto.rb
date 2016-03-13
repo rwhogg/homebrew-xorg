@@ -4,10 +4,10 @@ class XcbProto < Formula
   url    "http://xcb.freedesktop.org/dist/xcb-proto-1.11.tar.bz2"
   sha256 "b4aceee6502a0ce45fc39b33c541a2df4715d00b72e660ebe8c5bb444771e32e"
   # tag "linuxbrew"
-  
+
   option "with-check",  "Run a check before install"
   option "with-tests",  "Run tests upon installation"
-  option "with-python3","Build with python3 (default version is used otherwise)"
+  option "with-python3", "Build with python3 (default version is used otherwise)"
 
   # depends_on :autoconf
   depends_on "pkg-config"  => :build

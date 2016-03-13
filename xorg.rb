@@ -21,7 +21,7 @@ class Xorg < Formula
     depends_on :python       => :build
   end
 
-  args  = %W[]
+  args = %W[]
   args << "with-check"  if build.with?("check")
   args << "with-static" if build.with?("static")
 
