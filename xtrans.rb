@@ -12,12 +12,9 @@ class Xtrans < Formula
   depends_on "fontconfig" =>  :build
 
   if build.with?("docs")
-    option "with-libxslt", "Build docs using xsltproc"
-    option "with-xmlto",   "Build docs using xmlto"
-    option "with-fop",     "Build docs using fop"
-    depends_on "libxslt" => :build if build.with?("libxslt")
-    depends_on "xmlto"   => :build if build.with?("xmlto")
-    depends_on "fop"     => :build if build.with?("fop")
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xmlto"   => [:build, :recommended]
+    depends_on "fop"     => [:build, :recommended]
   end
 
   def install
@@ -27,9 +24,9 @@ class Xtrans < Formula
       --localstatedir=#{var}
     ]
     args << "--enable-docs" if build.with?("docs")
-    args << "--with-xslt"   if build.with?("libxslt")
-    args << "--with-xmlto"  if build.with?("xmlto")
-    args << "--with-fop"    if build.with?("fop")
+    args << "--with-xslt"   if !build.without?("libxslt")
+    args << "--with-xmlto"  if !build.without?("xmlto")
+    args << "--with-fop"    if !build.without?("fop")
 
     system "./configure", *args
     system "make", "install"

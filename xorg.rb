@@ -2,14 +2,13 @@ class Xorg < Formula
   desc "Xorg Libraries"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url      "http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html"
-  version  "latest"
+  version  "20160314"
   sha256   "6968c96792cd482df425fc79dfd90b55cbe92f73da29bc2381edf0a889041865"
   # tag "linuxbrew"
 
   option "with-check",      "Run a check before install (for all packages)"
   option "with-static",     "Build static libraries"
   option "with-docs",       "Build documentation (where applicable)"
-  # option "with-devel-docs", "Build libXfont  with text documentation"
   option "with-python3",    "Build xcb-proto with python3 (defaul python is used otherwise)"
 
   depends_on "fontconfig"         => :build
