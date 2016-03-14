@@ -4,7 +4,7 @@ class Libxdmcp < Formula
   url    "http://ftp.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2"
   sha256 "81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2"
   # tag "linuxbrew"
-  
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
 

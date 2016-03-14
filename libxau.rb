@@ -4,7 +4,7 @@ class Libxau < Formula
   url    "http://ftp.x.org/pub/individual/lib/libXau-1.0.8.tar.bz2"
   sha256 "fdd477320aeb5cdd67272838722d6b7d544887dfe7de46e1e7cc0c27c2bea4f2"
   # tag "linuxbrew"
-  
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
 

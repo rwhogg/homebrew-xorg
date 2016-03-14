@@ -11,7 +11,7 @@ class Libxt < Formula
   depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
-  
+
   depends_on "libsm"      =>  :build
   depends_on "libice"
   depends_on "libsm"      =>  :run
@@ -35,6 +35,5 @@ class Libxt < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end

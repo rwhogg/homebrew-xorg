@@ -5,8 +5,8 @@ class XorgDocs < Formula
   sha256 "b9b1918bd365e9eb29c325e76bb8c4d774d37be707e433fb0af94da35683375f"
   # tag "linuxbrew"
 
-  option "without-docs",  "Disable building the documentation" 
-  option "without-specs", "Disable building the specs" 
+  option "without-docs",  "Disable building the documentation"
+  option "without-specs", "Disable building the specs"
   option "with-check",    "Issue make check before installation"
 
   depends_on :autoconf     => :build
@@ -21,7 +21,7 @@ class XorgDocs < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check"   if build.with?("check")
+    system "make", "check" if build.with?("check")
     system "make", "install"
   end
 end

@@ -12,9 +12,8 @@ class XcbUtilImage < Formula
   depends_on "libxdmcp"   => :run
   depends_on "libxau"     => :run
 
-
   def install
-        args = %W[
+    args = %W[
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
@@ -25,5 +24,4 @@ class XcbUtilImage < Formula
     system "make"
     system "make", "install"
   end
-
 end

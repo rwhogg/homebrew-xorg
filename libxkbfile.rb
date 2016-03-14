@@ -30,6 +30,5 @@ class Libxkbfile < Formula
     system "make"
     system "make", "check" if build.with?("check")
     system "make", "install"
-
   end
 end
