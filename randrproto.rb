@@ -19,6 +19,8 @@ class Randrproto < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
 
     system "./configure", *args

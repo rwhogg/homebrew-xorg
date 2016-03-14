@@ -25,6 +25,7 @@ class XcbProto < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-silent-rules
     ]
 
     system "./configure", *args
