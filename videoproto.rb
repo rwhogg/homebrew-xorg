@@ -1,8 +1,8 @@
 class Videoproto < Formula
   desc "Xorg Protocol Headers: videoproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/proto/videoproto-2.3.2.tar.bz2"
-  sha256 "8dae168cb820fcd32f564879afb3f24d27c176300d9af66819a18265539bd4b6"
+  url    "http://ftp.x.org/pub/individual/proto/videoproto-2.3.3.tar.bz2"
+  sha256 "c7803889fd08e6fcaf7b68cc394fb038b2325d1f315e571a6954577e07cca702"
   # tag "linuxbrew"
 
   # depends_on :autoconf
