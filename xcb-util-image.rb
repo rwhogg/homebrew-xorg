@@ -9,8 +9,6 @@ class XcbUtilImage < Formula
   depends_on "pkg-config" => :build
   depends_on "libxcb"
   depends_on "xcb-util"
-  depends_on "libxdmcp"   => :run
-  depends_on "libxau"     => :run
 
   def install
     args = %W[

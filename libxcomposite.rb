@@ -14,9 +14,6 @@ class Libxcomposite < Formula
   depends_on "compositeproto" =>  :build
   depends_on "libx11"
   depends_on "libxfixes"  =>  :build
-  depends_on "libxau"     =>  :run
-  depends_on "libxcb"     =>  :run
-  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

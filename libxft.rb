@@ -13,18 +13,11 @@ class Libxft < Formula
   depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig"
-  depends_on "freetype"   =>  :run
 
   depends_on "libxrender" =>  :build
   depends_on "libx11"
-  depends_on "libxau"     =>  :run
-  depends_on "libxcb"     =>  :run
-  depends_on "libxdmcp"   =>  :run
-  depends_on "libxrender" =>  :run
-  depends_on "bzip2"      =>  :run if build.with?("brewed-bzip2")
-  depends_on "zlib"       =>  :run if build.with?("brewed-zlib")
-  depends_on "expat"      =>  :run
-  depends_on "libpng"     =>  :run
+  depends_on "bzip2"      if build.with?("brewed-bzip2")
+  depends_on "zlib"       if build.with?("brewed-zlib")
 
   def install
     args = %W[

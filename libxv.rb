@@ -13,12 +13,7 @@ class Libxv < Formula
   depends_on "fontconfig" =>  :build
 
   depends_on "libx11"
-  depends_on "libxau"     =>  :run
-  depends_on "libxcb"     =>  :run
-  depends_on "libxdmcp"   =>  :run
   depends_on "libxext"
-  depends_on "xextproto"  =>  :build
-  depends_on "videoproto" =>  :build
 
   def install
     args = %W[

@@ -18,11 +18,6 @@ class Libxaw < Formula
   depends_on "libxt"
   depends_on "libxmu"
   depends_on "libxpm"
-  depends_on "libsm"      =>  :run
-  depends_on "libice"     =>  :run
-  depends_on "libxcb"     =>  :run
-  depends_on "libxau"     =>  :run
-  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

@@ -15,9 +15,6 @@ class Libdmx < Formula
   depends_on "libxext"
   depends_on "xextproto"  =>  :build
   depends_on "dmxproto"   =>  :build
-  depends_on "libxcb"     =>  :run
-  depends_on "libxau"     =>  :run
-  depends_on "libxdmcp"   =>  :run
 
   def install
     args = %W[

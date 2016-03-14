@@ -14,15 +14,13 @@ class Libxfont < Formula
   depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
-  depends_on "bzip2"      =>  :run if build.with?("brewed-bzip2")
-  depends_on "zlib"       =>  :run if build.with?("brewed-zlib")
+  depends_on "bzip2" if build.with?("brewed-bzip2")
+  depends_on "zlib"  if build.with?("brewed-zlib")
 
   depends_on "xproto"     =>  :build
   depends_on "xtrans"     =>  :build
   depends_on "fontsproto" =>  :build
   depends_on "libfontenc"
-  depends_on "freetype"   =>  :run
-  depends_on "libpng"     =>  :run
 
   def install
     args = %W[
