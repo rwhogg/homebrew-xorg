@@ -22,6 +22,8 @@ class Libx11 < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
 	  args << "--disable-static" if !build.with?("static")
 

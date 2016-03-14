@@ -24,6 +24,8 @@ class Libxt < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --with-appdefaultdir=#{etc}/X11/app-defaults
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
 	  args << "--disable-static" if !build.with?("static")
 
