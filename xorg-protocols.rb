@@ -1,9 +1,9 @@
 class XorgProtocols < Formula
   desc "Xorg Protocols"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url      "http://www.linuxfromscratch.org/blfs/view/svn/x/x7proto.html"
+  url      "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/README.md"
   version  "latest"
-  sha256   "86a38ed2e74606387b9e79cbd8760f9ede8dbdabb6c8c05480f2f00905803182"
+  sha256   "846477dd316964fe52e9f73c3752d3c0383f7099046dd06ddfda92c2f9baad5d"
   # tag "linuxbrew"
 
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
@@ -27,6 +27,6 @@ class XorgProtocols < Formula
 
   def install
     ohai "Xorg Protocols have been installed!"
-    prefix.install "x7proto.html"
+    prefix.install "README.md" => "xorg-protocols.md"
   end
 end
