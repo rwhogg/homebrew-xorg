@@ -5,7 +5,6 @@ class Presentproto < Formula
   sha256 "812c7d48721f909a0f7a2cb1e91f6eead76159a36c4712f4579ca587552839ce"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

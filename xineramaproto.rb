@@ -5,7 +5,6 @@ class Xineramaproto < Formula
   sha256 "977574bb3dc192ecd9c55f59f991ec1dff340be3e31392c95deff423da52485b"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

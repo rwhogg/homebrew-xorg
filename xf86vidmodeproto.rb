@@ -5,7 +5,6 @@ class Xf86vidmodeproto < Formula
   sha256 "45d9499aa7b73203fd6b3505b0259624afed5c16b941bd04fcf123e5de698770"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

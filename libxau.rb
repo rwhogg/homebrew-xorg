@@ -21,7 +21,6 @@ class Libxau < Formula
   args << "with-xmlto"                 if build.with?("xmlto")
   args << "with-asciidoc"              if build.with?("asciidoc")
 
-  # depends_on :autoconf
   depends_on "pkg-config"         => :build
   depends_on "xorg-protocols"     => args
 

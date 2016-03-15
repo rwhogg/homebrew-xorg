@@ -10,7 +10,6 @@ class Libxcb < Formula
   option "with-static", "Build static libraries"
   option "without-doxygen", "Do not generate API documentation"
 
-  # depends_on :autoconf
   depends_on "pkg-config"  => :build
   depends_on "libxau"
   depends_on "xcb-proto"   => :build

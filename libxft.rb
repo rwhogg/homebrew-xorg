@@ -10,7 +10,6 @@ class Libxft < Formula
   option "with-brewed-bzip2", "Use brewed bzip2"
   option "with-brewed-zlib", "Use brewed zlib"
 
-  depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig"
 

@@ -5,7 +5,6 @@ class Xproto < Formula
   sha256 "29e85568d1f68ceef8a2c081dad9bc0e5500a53cfffde24b564dc43d46ddf6ca"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

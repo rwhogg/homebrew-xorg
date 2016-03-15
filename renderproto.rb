@@ -5,7 +5,6 @@ class Renderproto < Formula
   sha256 "06735a5b92b20759204e4751ecd6064a2ad8a6246bb65b3078b862a00def2537"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

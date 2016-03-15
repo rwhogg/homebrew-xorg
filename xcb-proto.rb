@@ -9,7 +9,6 @@ class XcbProto < Formula
   option "with-tests",  "Run tests upon installation"
   option "with-python3", "Build with python3 (default version is used otherwise)"
 
-  # depends_on :autoconf
   depends_on "pkg-config"  => :build
 
   if build.with?("python3")

@@ -5,7 +5,6 @@ class Xf86dgaproto < Formula
   sha256 "ac5ef65108e1f2146286e53080975683dae49fc94680042e04bd1e2010e99050"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

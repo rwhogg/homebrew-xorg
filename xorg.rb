@@ -34,7 +34,7 @@ class Xorg < Formula
 
   args << "without-xorg-sgml-doctools" if build.without?("xorg-sgml-doctools")
   args << "with-fop"                   if build.with?("fop")
-  args << "with-libxslt"               if build.with?("libxslt")
+  args << "with-libxsltproc"           if build.with?("libxslt")
   args << "with-xmlto"                 if build.with?("xmlto")
   args << "with-asciidoc"              if build.with?("asciidoc")
 

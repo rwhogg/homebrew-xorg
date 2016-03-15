@@ -5,7 +5,6 @@ class Dri3proto < Formula
   sha256 "01be49d70200518b9a6b297131f6cc71f4ea2de17436896af153226a774fc074"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

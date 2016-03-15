@@ -9,7 +9,6 @@ class XorgDocs < Formula
   option "without-specs", "Disable building the specs"
   option "with-check",    "Issue make check before installation"
 
-  depends_on :autoconf     => :build
   depends_on "util-macros" => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
 

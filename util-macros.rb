@@ -6,8 +6,6 @@ class UtilMacros < Formula
   sha256 "2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba"
   # tag "linuxbrew"
 
-  depends_on :autoconf
-
   def install
     args = %W[
       --prefix=#{prefix}

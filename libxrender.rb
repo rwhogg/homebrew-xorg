@@ -8,7 +8,6 @@ class Libxrender < Formula
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
 
-  depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
 

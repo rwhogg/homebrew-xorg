@@ -5,7 +5,6 @@ class Randrproto < Formula
   sha256 "4c675533e79cd730997d232c8894b6692174dce58d3e207021b8f860be498468"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

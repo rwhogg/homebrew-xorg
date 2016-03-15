@@ -5,7 +5,6 @@ class Dmxproto < Formula
   sha256 "e72051e6a3e06b236d19eed56368117b745ca1e1a27bdc50fd51aa375bea6509"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]

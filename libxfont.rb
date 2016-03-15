@@ -11,7 +11,6 @@ class Libxfont < Formula
   option "with-brewed-bzip2", "Use brewed bzip2"
   option "with-brewed-zlib", "Use brewed zlib"
 
-  depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
   depends_on "bzip2" if build.with?("brewed-bzip2")

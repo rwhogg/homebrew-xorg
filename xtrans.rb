@@ -7,11 +7,11 @@ class Xtrans < Formula
 
   option "with-docs", "Build documentation"
 
-  depends_on :autoconf
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
 
   if build.with?("docs")
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "xmlto"   => [:build, :recommended]
     depends_on "fop"     => [:build, :recommended]
@@ -23,10 +23,10 @@ class Xtrans < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
-    args << "--enable-docs" if build.with?("docs")
-    args << "--with-xslt"   if !build.without?("libxslt")
-    args << "--with-xmlto"  if !build.without?("xmlto")
-    args << "--with-fop"    if !build.without?("fop")
+    args << "--enable-docs"   if  build.with?("docs")
+    args << "--with-xsltproc" if !build.without?("libxslt")
+    args << "--with-xmlto"    if !build.without?("xmlto")
+    args << "--with-fop"      if !build.without?("fop")
 
     system "./configure", *args
     system "make", "install"

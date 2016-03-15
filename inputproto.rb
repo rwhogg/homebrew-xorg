@@ -5,7 +5,6 @@ class Inputproto < Formula
   sha256 "5a47ee62053a6acef3a83f506312494be1461068d0b9269d818839703b95c1d1"
   # tag "linuxbrew"
 
-  # depends_on :autoconf
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
