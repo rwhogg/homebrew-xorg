@@ -13,7 +13,7 @@ Please replace this line with a brief summary of your issue **AND** if reporting
 `brew gist-logs <formula>`
 (where `<formula>` is the name of the formula that failed to build).
 
-Additonally, please copy any relevant error messages (truncated if necessary) into this issue and link directly to them.
+Additionally, please copy any relevant error messages (truncated if necessary) into this issue and link directly to them.
 
 ### Feature/Formula Requests:
 
