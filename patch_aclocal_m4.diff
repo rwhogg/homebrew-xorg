@@ -1,0 +1,12 @@
+diff --git a/aclocal.m4 b/aclocal.m4
+index 6cc22a0..2e4c085 100644
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -10319,6 +10319,7 @@ fi])
+ # Test for the ability of xmlto to generate a text target
+ have_xmlto_text=no
+ cat > conftest.xml << "EOF"
++<x></x>
+ EOF
+ AS_IF([test "$have_xmlto" = yes],
+       [AS_IF([$XMLTO --skip-validation txt conftest.xml >/dev/null 2>&1],
