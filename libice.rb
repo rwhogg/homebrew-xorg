@@ -8,11 +8,22 @@ class Libice < Formula
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
 
+  # Docomentation / specs
+  option "with-docs",     "Build documentation"
+  option "without-specs", "Disable building the specs"
+
   depends_on "pkg-config" =>  :build
   depends_on "fontconfig" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "xtrans"     =>  :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
+
+  if build.with?("docs")
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xmlto"   => [:build, :recommended]
+    depends_on "fop"     => [:build, :recommended]
+  end
 
   def install
     args = %W[
