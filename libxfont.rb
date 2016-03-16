@@ -7,19 +7,34 @@ class Libxfont < Formula
 
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
-  option "with-devel-docs", "Build text documentation"
-  option "with-brewed-bzip2", "Use brewed bzip2"
+  option "with-devel-docs", "Build the developer documentation"
+
   option "with-brewed-zlib", "Use brewed zlib"
+  option "with-brewed-bzip2", "Use libbz2 to support bzip2 compressed bitmap fonts"
 
+  # Required dependencies
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
-  depends_on "bzip2" if build.with?("brewed-bzip2")
-  depends_on "zlib"  if build.with?("brewed-zlib")
-
   depends_on "xproto"     =>  :build
   depends_on "xtrans"     =>  :build
   depends_on "fontsproto" =>  :build
   depends_on "libfontenc"
+
+  # Optional dependencies
+  depends_on "bzip2" if build.with?("brewed-bzip2")
+  depends_on "zlib"  if build.with?("brewed-zlib")
+
+  depends_on :autoconf  # needed for autoreconf
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_aclocal_m4.diff"
+    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+  end
+
+  if build.with?("devel-docs")
+    depends_on "xmlto"   => :build
+    depends_on "fop"     => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+  end
 
   def install
     args = %W[
@@ -29,9 +44,13 @@ class Libxfont < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
-    args << "--disable-devel-docs" if !build.with?("devel-docs")
 
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    args << "--enable-devel-docs=#{build.with?("devel-docs") ? "yes" : "no"}"
+    args << "--with-freetype-config=#{Formula["freetype"].bin}/freetype-config"
+
+    system "autoreconf", "-fiv"
     system "./configure", *args
     system "make"
     system "make", "check" if build.with?("check")
