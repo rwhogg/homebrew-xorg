@@ -7,22 +7,26 @@ class Libice < Formula
 
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
+  option "with-docs",   "Build documentation"
+  option "with-specs",  "Build specifications"
 
-  # Docomentation / specs
-  option "with-docs",     "Build documentation"
-  option "without-specs", "Disable building the specs"
-
+  # Required dependencies
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "xtrans"     =>  :build
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
+
+  depends_on :autoconf  # needed for autoreconf
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_aclocal_m4.diff"
+    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+  end
 
   if build.with?("docs")
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
-    depends_on "libxslt" => [:build, :recommended]
-    depends_on "xmlto"   => [:build, :recommended]
+    depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install
@@ -33,8 +37,14 @@ class Libice < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
 
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
+    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
+
+
+    system "autoreconf", "-fiv"
     system "./configure", *args
     system "make"
     system "make", "check" if build.with?("check")
