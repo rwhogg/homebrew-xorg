@@ -7,13 +7,25 @@ class Libsm < Formula
 
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
+  option "with-docs",   "Build documentation"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
   depends_on "xproto"     =>  :build
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
   depends_on "libice"
   depends_on "xtrans"     =>  :build
+
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+  end
+
+  if build.with?("docs")
+    depends_on "xmlto"   => [:build, :recommended]
+    depends_on "fop"     => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+  end
 
   def install
     args = %W[
@@ -23,7 +35,10 @@ class Libsm < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"

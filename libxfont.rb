@@ -7,7 +7,7 @@ class Libxfont < Formula
 
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
-  option "with-devel-docs", "Build the developer documentation"
+  option "with-devel-docs", "Build developer documentation"
 
   option "with-brewed-zlib", "Use brewed zlib"
   option "with-brewed-bzip2", "Use libbz2 to support bzip2 compressed bitmap fonts"
@@ -23,11 +23,10 @@ class Libxfont < Formula
   depends_on "bzip2" if build.with?("brewed-bzip2")
   depends_on "zlib"  if build.with?("brewed-zlib")
 
-  depends_on :autoconf  # needed for autoreconf
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_aclocal_m4.diff"
-    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
   if build.with?("devel-docs")
@@ -50,7 +49,6 @@ class Libxfont < Formula
     args << "--enable-devel-docs=#{build.with?("devel-docs") ? "yes" : "no"}"
     args << "--with-freetype-config=#{Formula["freetype"].bin}/freetype-config"
 
-    system "autoreconf", "-fiv"
     system "./configure", *args
     system "make"
     system "make", "check" if build.with?("check")

@@ -1,0 +1,8 @@
+diff --git a/configure b/configure
+index 1375616..7f6a375 100755
+--- a/configure
++++ b/configure
+@@ -18647,2 +18647,3 @@ have_xmlto_text=no
+ cat > conftest.xml << "EOF"
++<x></x>
+ EOF
