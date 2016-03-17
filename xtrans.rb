@@ -8,13 +8,19 @@ class Xtrans < Formula
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
+
+  depends_on :autoconf  # needed for autoreconf
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_aclocal_m4.diff"
+    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+  end
 
   if build.with?("docs")
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
-    depends_on "libxslt" => [:build, :recommended]
     depends_on "xmlto"   => [:build, :recommended]
     depends_on "fop"     => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
   end
 
   def install
@@ -23,11 +29,12 @@ class Xtrans < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
-    args << "--enable-docs"   if  build.with?("docs")
-    args << "--with-xsltproc" if !build.without?("libxslt")
-    args << "--with-xmlto"    if !build.without?("xmlto")
-    args << "--with-fop"      if !build.without?("fop")
 
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
+
+    system "autoreconf", "-fiv"
     system "./configure", *args
     system "make", "install"
   end
