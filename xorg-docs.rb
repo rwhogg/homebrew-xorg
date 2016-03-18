@@ -12,6 +12,9 @@ class XorgDocs < Formula
   option "with-check",    "Run a check before installation"
 
   depends_on "util-macros" => [:build, :recommended]
+  depends_on "xmlto"       => [:build, :recommended]
+  depends_on "fop"         => [:build, :recommended]
+  depends_on "libxslt"     => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
   
   # Patch for xmlto
