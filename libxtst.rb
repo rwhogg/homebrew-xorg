@@ -10,8 +10,6 @@ class Libxtst < Formula
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build
-  #depends_on "fontconfig" =>  :build
-
   depends_on "libxi"
 
   # Patch for xmlto
