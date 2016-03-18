@@ -16,7 +16,7 @@ class Xtrans < Formula
   end
 
   if build.with?("docs")
-    depends_on "xmlto"   => [:build, :recommended]
+    depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "xorg-sgml-doctools" => [:build, :recommended]
