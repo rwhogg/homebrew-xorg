@@ -5,13 +5,14 @@ class Inputproto < Formula
   sha256 "5a47ee62053a6acef3a83f506312494be1461068d0b9269d818839703b95c1d1"
   # tag "linuxbrew"
 
+  option "with-specs",  "Build specifications"
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  depends_on "fop"                => [:build, :optional]
-  depends_on "libxslt"            => [:build, :optional]
-  depends_on "xmlto"              => [:build, :optional]
-  depends_on "asciidoc"           => [:build, :optional]
+
+  if build.with?("specs")
+   depends_on "asciidoc"           => :build
+  end
 
   def install
     args = %W[
@@ -21,6 +22,9 @@ class Inputproto < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
+
+    # Be explicit about the configure flags
+    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make", "install"
