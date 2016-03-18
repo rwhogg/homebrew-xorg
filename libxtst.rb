@@ -7,11 +7,25 @@ class Libxtst < Formula
 
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
+  option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
+  #depends_on "fontconfig" =>  :build
 
   depends_on "libxi"
+
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
+  end
+
+  if build.with?("specs")
+    depends_on "xmlto"   => :build
+    depends_on "fop"     => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+  end
 
   def install
     args = %W[
@@ -21,7 +35,10 @@ class Libxtst < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
