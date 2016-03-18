@@ -59,7 +59,7 @@ class Xorg < Formula
   end
 
   def install
-    ohai "Xorg Protocols have been installed!"
+    ohai "Xorg has been installed!"
     prefix.install "x7lib.html"
   end
 end
