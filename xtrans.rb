@@ -9,11 +9,10 @@ class Xtrans < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on :autoconf  # needed for autoreconf
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_aclocal_m4.diff"
-    sha256 "684b6ae834727535ee6296db17e8c33ae5d01e118326b341190a4d0deec108e5"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
   if build.with?("docs")
@@ -34,7 +33,6 @@ class Xtrans < Formula
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
     args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
-    system "autoreconf", "-fiv"
     system "./configure", *args
     system "make", "install"
   end
