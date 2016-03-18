@@ -5,13 +5,23 @@ class Bigreqsproto < Formula
   sha256 "462116ab44e41d8121bfde947321950370b285a5316612b8fce8334d50751b1e"
   # tag "linuxbrew"
 
+  option "with-specs",  "Build specifications"
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  depends_on "fop"                => [:build, :optional]
-  depends_on "libxslt"            => [:build, :optional]
-  depends_on "xmlto"              => [:build, :optional]
-  depends_on "asciidoc"           => [:build, :optional]
+
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
+  end
+
+  if build.with?("specs")
+    depends_on "xmlto"   => :build
+    depends_on "fop"     => [:build, :recommended]
+    depends_on "libxslt" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+  end
 
   def install
     args = %W[
@@ -21,6 +31,9 @@ class Bigreqsproto < Formula
       --disable-silent-rules
       --disable-dependency-tracking
     ]
+
+    # Be explicit about the configure flags
+    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make", "install"
