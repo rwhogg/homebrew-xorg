@@ -5,12 +5,20 @@ class XorgDocs < Formula
   sha256 "b9b1918bd365e9eb29c325e76bb8c4d774d37be707e433fb0af94da35683375f"
   # tag "linuxbrew"
 
-  option "without-docs",  "Disable building the documentation"
-  option "without-specs", "Disable building the specs"
-  option "with-check",    "Issue make check before installation"
+  # unlike other packages, this one is all about documentation
+  # so we build docs + specs unless requested otherwise
+  option "without-docs",  "Do not build documentation"
+  option "without-specs", "Do not build specifications"
+  option "with-check",    "Run a check before installation"
 
   depends_on "util-macros" => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
+  
+  # Patch for xmlto
+  patch do
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
+  end
 
   def install
     args = %W[
@@ -18,8 +26,10 @@ class XorgDocs < Formula
       --disable-silent-rules
     ]
     args << "--prefix=#{prefix}"
-    args << "--enable-docs"      if !build.without?("docs")
-    args << "--enable-specs"     if !build.without?("specs")
+
+    # Be explicit about the configure flags
+    args << "--enable-docs=#{build.without?("docs") ? "no" : "yes"}"
+    args << "--enable-specs=#{build.without?("specs") ? "no" : "yes"}"
 
     system "./configure", *args
     system "make"
