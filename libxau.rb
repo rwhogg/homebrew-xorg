@@ -8,21 +8,8 @@ class Libxau < Formula
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries"
 
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  depends_on "fop"                => [:build, :optional]
-  depends_on "libxslt"            => [:build, :optional]
-  depends_on "xmlto"              => [:build, :optional]
-  depends_on "asciidoc"           => [:build, :optional]
-
-  args = %W[]
-  args << "without-xorg-sgml-doctools" if build.without?("xorg-sgml-doctools")
-  args << "with-fop"                   if build.with?("fop")
-  args << "with-libxslt"               if build.with?("libxslt")
-  args << "with-xmlto"                 if build.with?("xmlto")
-  args << "with-asciidoc"              if build.with?("asciidoc")
-
   depends_on "pkg-config"         => :build
-  depends_on "xorg-protocols"     => args
+  depends_on "xorg-protocols"
 
   def install
     args = %W[
@@ -32,7 +19,9 @@ class Libxau < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"

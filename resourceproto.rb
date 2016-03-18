@@ -7,11 +7,6 @@ class Resourceproto < Formula
 
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
-  depends_on "xorg-sgml-doctools" => [:build, :recommended]
-  depends_on "fop"                => [:build, :optional]
-  depends_on "libxslt"            => [:build, :optional]
-  depends_on "xmlto"              => [:build, :optional]
-  depends_on "asciidoc"           => [:build, :optional]
 
   def install
     args = %W[
