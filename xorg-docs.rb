@@ -13,7 +13,10 @@ class XorgDocs < Formula
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
 
   def install
-    args = %W[]
+    args = %W[
+      --disable-dependency-tracking
+      --disable-silent-rules
+    ]
     args << "--prefix=#{prefix}"
     args << "--enable-docs"      if !build.without?("docs")
     args << "--enable-specs"     if !build.without?("specs")
