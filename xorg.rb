@@ -1,5 +1,5 @@
 class Xorg < Formula
-  desc "Xorg Libraries"
+  desc "X.Org X11 libraries"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url      "http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html"
   version  "20160314"
@@ -9,7 +9,7 @@ class Xorg < Formula
   option "with-check",      "Run a check before install (for all packages)"
   option "with-static",     "Build static libraries"
   option "with-docs",       "Build documentation (where applicable)"
-  option "with-python3",    "Build xcb-proto with python3 (defaul python is used otherwise)"
+  option "with-python3",    "Build xcb-proto with python3 (default python is used otherwise)"
 
   depends_on "fontconfig"         => :build
   depends_on "xorg-sgml-doctools" => [:build, :recommended]
