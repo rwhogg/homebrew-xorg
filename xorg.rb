@@ -1,9 +1,9 @@
 class Xorg < Formula
   desc "X.Org X11 libraries"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url      "http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html"
+  url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/README.md"
   version  "20160314"
-  sha256   "6968c96792cd482df425fc79dfd90b55cbe92f73da29bc2381edf0a889041865"
+  sha256   "846477dd316964fe52e9f73c3752d3c0383f7099046dd06ddfda92c2f9baad5d"
   # tag "linuxbrew"
 
   option "with-check",      "Run a check before install (for all packages)"
@@ -60,6 +60,6 @@ class Xorg < Formula
 
   def install
     ohai "Xorg has been installed!"
-    prefix.install "x7lib.html"
+    prefix.install "README.md" => "xorg.md"
   end
 end
