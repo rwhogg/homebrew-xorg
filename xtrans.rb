@@ -27,6 +27,8 @@ class Xtrans < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --localstatedir=#{var}
+      --disable-dependency-tracking
+      --disable-silent-rules
     ]
 
     # Be explicit about the configure flags
