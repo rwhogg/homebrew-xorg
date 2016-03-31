@@ -9,7 +9,6 @@ class Libxcursor < Formula
   option "with-static", "Build static libraries"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
   depends_on "libxrender"
   depends_on "libxfixes"
   depends_on "libx11"
@@ -23,7 +22,9 @@ class Libxcursor < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
