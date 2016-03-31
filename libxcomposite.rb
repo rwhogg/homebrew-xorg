@@ -9,10 +9,14 @@ class Libxcomposite < Formula
   option "with-static", "Build static libraries"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
   depends_on "compositeproto" =>  :build
   depends_on "libx11"
   depends_on "libxfixes"  =>  :build
+
+  # Configure script says that libXcomposite depends on xmlto
+  # which  is used to regenerate documentation.
+  # But xmlto is never used (according to the log)
+  # so we do not add this dependency.
 
   def install
     args = %W[
@@ -22,7 +26,9 @@ class Libxcomposite < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-	  args << "--disable-static" if !build.with?("static")
+
+    # Be explicit about the configure flags
+    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
