@@ -9,7 +9,6 @@ class Libxxf86vm < Formula
   option "with-static", "Build static libraries"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
 
   depends_on "xproto"     =>  :build
   depends_on "libx11"
