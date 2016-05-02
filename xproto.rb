@@ -5,6 +5,11 @@ class Xproto < Formula
   sha256 "29e85568d1f68ceef8a2c081dad9bc0e5500a53cfffde24b564dc43d46ddf6ca"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "082c8e842bc13f76a67fb0fad3db55fcd69f2b1d3e57196bdfdca327c4f3037a" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
