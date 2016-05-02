@@ -6,6 +6,11 @@ class UtilMacros < Formula
   sha256 "2835b11829ee634e19fa56517b4cfc52ef39acea0cd82e15f68096e27cbed0ba"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "cd91876f086c7e73b4c42b904b2e86eab4aed4a9cfbbb92c9f554f75e993eae9" => :x86_64_linux
+  end
+
   def install
     args = %W[
       --prefix=#{prefix}
