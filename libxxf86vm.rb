@@ -1,12 +1,12 @@
 class Libxxf86vm < Formula
-  desc "Xorg Libraries: libXxf86vm"
+  desc "X.Org Libraries: libXxf86vm"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXxf86vm-1.1.4.tar.bz2"
   sha256 "afee27f93c5f31c0ad582852c0fb36d50e4de7cd585fcf655e278a633d85cd57"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
 

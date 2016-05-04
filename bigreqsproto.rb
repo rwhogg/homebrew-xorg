@@ -1,5 +1,5 @@
 class Bigreqsproto < Formula
-  desc "Xorg Protocol Headers: bigreqsproto"
+  desc "X.Org Protocol Headers: bigreqsproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/proto/bigreqsproto-1.1.2.tar.bz2"
   sha256 "462116ab44e41d8121bfde947321950370b285a5316612b8fce8334d50751b1e"
@@ -20,7 +20,7 @@ class Bigreqsproto < Formula
     depends_on "xmlto"   => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
-    depends_on "xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "xorg-sgml-doctools" => :build
   end
 
   def install
@@ -38,4 +38,13 @@ class Bigreqsproto < Formula
     system "./configure", *args
     system "make", "install"
   end
+
+# def post_install
+#   if build.with?("specs")
+#     mkdir_p "#{Formula["xorg-sgml-doctools"].prefix}/share/doc"
+#     rm_f "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
+#     ln_sf "#{doc}", "#{Formula["xorg-sgml-doctools"].share}/doc/#{name}"
+#   end
+# end
+
 end

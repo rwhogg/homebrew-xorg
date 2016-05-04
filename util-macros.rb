@@ -1,5 +1,5 @@
 class UtilMacros < Formula
-  desc "Xorg util-macros"
+  desc "X.Org util-macros"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://www.x.org/archive/individual/util/util-macros-1.19.0.tar.bz2"
   mirror "ftp://ftp.x.org/pub/individual/util/util-macros-1.19.0.tar.bz2"

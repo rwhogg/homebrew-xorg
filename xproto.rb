@@ -1,5 +1,5 @@
 class Xproto < Formula
-  desc "Xorg Protocol Headers: xproto"
+  desc "X.Org Protocol Headers: xproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/proto/xproto-7.0.28.tar.bz2"
   sha256 "29e85568d1f68ceef8a2c081dad9bc0e5500a53cfffde24b564dc43d46ddf6ca"

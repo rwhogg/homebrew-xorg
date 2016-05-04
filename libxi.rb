@@ -1,12 +1,12 @@
 class Libxi < Formula
-  desc "Xorg Libraries: libXi"
+  desc "X.Org Libraries: libXi"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXi-1.7.6.tar.bz2"
   sha256 "1f32a552cec0f056c0260bdb32e853cec0673d2f40646ce932ad5a9f0205b7ac"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
   option "with-specs",  "Build specifications"
 

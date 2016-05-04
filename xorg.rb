@@ -7,7 +7,7 @@ class Xorg < Formula
   # tag "linuxbrew"
 
   option "with-check",      "Run a check before install (for all packages)"
-  option "with-static",     "Build static libraries"
+  option "with-static",     "Build static libraries (not recommended)"
   option "with-docs",       "Build documentation (where applicable)"
   option "with-python3",    "Build xcb-proto with python3 (default python is used otherwise)"
 

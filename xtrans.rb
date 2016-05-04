@@ -1,5 +1,5 @@
 class Xtrans < Formula
-  desc "Xorg Libraries: xtrans"
+  desc "X.Org Libraries: xtrans"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/xtrans-1.3.5.tar.bz2"
   sha256 "adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301"

@@ -6,7 +6,7 @@ class Libxau < Formula
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config"         => :build
   depends_on "xorg-protocols"

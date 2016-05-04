@@ -1,12 +1,12 @@
 class Libice < Formula
-  desc "Xorg Libraries: libICE"
+  desc "X.Org Libraries: libICE"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libICE-1.0.9.tar.bz2"
   sha256 "8f7032f2c1c64352b5423f6b48a8ebdc339cc63064af34d66a6c9aa79759e202"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
   option "with-specs",  "Build specifications"
 

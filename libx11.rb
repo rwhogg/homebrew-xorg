@@ -1,12 +1,12 @@
 class Libx11 < Formula
-  desc "Xorg Libraries: libX11"
+  desc "X.Org Libraries: libX11"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libX11-1.6.3.tar.bz2"
   sha256 "cf31a7c39f2f52e8ebd0db95640384e63451f9b014eed2bb7f5de03e8adc8111"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build

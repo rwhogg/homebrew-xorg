@@ -6,7 +6,7 @@ class Libxcb < Formula
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Generate API documentation"
 
   depends_on "pkg-config"  => :build

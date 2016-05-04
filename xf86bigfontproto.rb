@@ -1,5 +1,5 @@
 class Xf86bigfontproto < Formula
-  desc "Xorg Protocol Headers: xf86bigfontproto"
+  desc "X.Org Protocol Headers: xf86bigfontproto"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/proto/xf86bigfontproto-1.2.0.tar.bz2"
   sha256 "ba9220e2c4475f5ed2ddaa7287426b30089e4d29bd58d35fad57ba5ea43e1648"

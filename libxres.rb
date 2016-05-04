@@ -1,15 +1,14 @@
 class Libxres < Formula
-  desc "Xorg Libraries: libXres"
+  desc "X.Org Libraries: libXres"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXres-1.0.7.tar.bz2"
   sha256 "26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
-  depends_on "fontconfig" =>  :build
 
   depends_on "libx11"
   depends_on "libxext"

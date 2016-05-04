@@ -4,7 +4,7 @@ class XcbUtilImage < Formula
   url "http://xcb.freedesktop.org/dist/xcb-util-image-0.4.0.tar.bz2"
   sha256 "2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc"
 
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
   depends_on "libxcb"

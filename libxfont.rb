@@ -1,12 +1,12 @@
 class Libxfont < Formula
-  desc "Xorg Libraries: libXfont"
+  desc "X.Org Libraries: libXfont"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXfont-1.5.1.tar.bz2"
   sha256 "b70898527c73f9758f551bbab612af611b8a0962202829568d94f3edf4d86098"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
   option "with-brewed-zlib", "Use brewed zlib"
@@ -18,6 +18,7 @@ class Libxfont < Formula
   depends_on "xtrans"     =>  :build
   depends_on "fontsproto" =>  :build
   depends_on "libfontenc"
+  depends_on "freetype"
 
   # Optional dependencies
   depends_on "bzip2" if build.with?("brewed-bzip2")

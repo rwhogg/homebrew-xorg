@@ -1,12 +1,12 @@
 class Libxaw < Formula
-  desc "Xorg Libraries: libXaw"
+  desc "X.Org Libraries: libXaw"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXaw-1.0.13.tar.bz2"
   sha256 "8ef8067312571292ccc2bbe94c41109dcf022ea5a4ec71656a83d8cce9edb0cd"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build

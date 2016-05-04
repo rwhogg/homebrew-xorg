@@ -1,12 +1,12 @@
 class Libxtst < Formula
-  desc "Xorg Libraries: libXtst"
+  desc "X.Org Libraries: libXtst"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url    "http://ftp.x.org/pub/individual/lib/libXtst-1.2.2.tar.bz2"
   sha256 "ef0a7ffd577e5f1a25b1663b375679529663a1880151beaa73e9186c8309f6d9"
   # tag "linuxbrew"
 
   option "with-check",  "Run a check before install"
-  option "with-static", "Build static libraries"
+  option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config" =>  :build
