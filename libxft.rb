@@ -11,6 +11,7 @@ class Libxft < Formula
   option "with-brewed-zlib", "Use brewed zlib"
 
   depends_on "pkg-config" =>  :build
+  depends_on "fontconfig" =>  :build
 
   depends_on "libxrender" =>  :build
   depends_on "libx11"
