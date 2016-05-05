@@ -27,6 +27,9 @@ class XcbProto < Formula
       --disable-silent-rules
     ]
 
+    if build.with?("python3")
+      ENV["PYTHON"] = "python3"
+    end
     system "./configure", *args
     system "make"
     system "make", "check" if build.with?("check")
