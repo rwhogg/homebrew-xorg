@@ -5,6 +5,11 @@ class Dri3proto < Formula
   sha256 "01be49d70200518b9a6b297131f6cc71f4ea2de17436896af153226a774fc074"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "788fe42333de8a07ac603def01eafa4d70cda9b7582f1cf7e0cd063d2dcbfbba" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
