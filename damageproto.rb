@@ -5,6 +5,11 @@ class Damageproto < Formula
   sha256 "5c7c112e9b9ea8a9d5b019e5f17d481ae20f766cb7a4648360e7c1b46fc9fc5b"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "97bf4f9ad52aefdcdb9169c0a436c38d12e1db32db65b234073e04d06a3f02bd" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
