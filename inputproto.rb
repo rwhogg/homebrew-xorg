@@ -5,6 +5,11 @@ class Inputproto < Formula
   sha256 "5a47ee62053a6acef3a83f506312494be1461068d0b9269d818839703b95c1d1"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "c4ec367162b7b7fdaf076672426134b2b04da6b3c271723dba597ec81c01e6fd" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
