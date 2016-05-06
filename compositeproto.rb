@@ -5,6 +5,11 @@ class Compositeproto < Formula
   sha256 "049359f0be0b2b984a8149c966dd04e8c58e6eade2a4a309cf1126635ccd0cfc"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "4b1bf94e444d74a4acd8982fed297523b299373b72c775e98e008e7a9b5ba8c8" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
