@@ -5,6 +5,11 @@ class Glproto < Formula
   sha256 "adaa94bded310a2bfcbb9deb4d751d965fcfe6fb3a2f6d242e2df2d6589dbe40"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "ca1b0d27122bae1fd580bf9d46bfb7b925438c5e95ffb834c78bc9cb27d64904" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
