@@ -5,6 +5,11 @@ class Xf86driproto < Formula
   sha256 "9c4b8d7221cb6dc4309269ccc008a22753698ae9245a398a59df35f1404d661f"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "add3e319e6aa797042f7b8eb8ca39b9213fdc642330769cd80f1656b007be6fa" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
