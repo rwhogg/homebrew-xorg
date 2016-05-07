@@ -5,6 +5,11 @@ class Recordproto < Formula
   sha256 "a777548d2e92aa259f1528de3c4a36d15e07a4650d0976573a8e2ff5437e7370"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "e23cb1e1cb66b34322fdd448fd79c684b38acb1b0fc7c4f0f6231fe4028ea97e" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
