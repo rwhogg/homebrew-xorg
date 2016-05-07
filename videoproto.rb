@@ -5,6 +5,11 @@ class Videoproto < Formula
   sha256 "c7803889fd08e6fcaf7b68cc394fb038b2325d1f315e571a6954577e07cca702"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "131b8b6037c14e9f384bf80f004009b2b85df8ba6f75b66996cf5b012b17d4bf" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
