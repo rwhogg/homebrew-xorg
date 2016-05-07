@@ -5,6 +5,11 @@ class Xf86vidmodeproto < Formula
   sha256 "45d9499aa7b73203fd6b3505b0259624afed5c16b941bd04fcf123e5de698770"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "fcf020ee7ae77f134702e0ae849e7d4211e7db404431ef0a02e6076c66e753cd" => :x86_64_linux
+  end
+
   depends_on "pkg-config"         =>  :build
   depends_on "util-macros"        =>  :build
 
