@@ -13,8 +13,6 @@ class XorgProtocols < Formula
 
   option "with-specs", "Build specifications (where applicable)"
 
-  depends_on "xorg-sgml-doctools" => :build if build.with?("specs")
-
   # with specs
   reswithspec = %w[bigreqsproto fontsproto inputproto kbproto recordproto scrnsaverproto xcmiscproto xextproto xproto]
 
