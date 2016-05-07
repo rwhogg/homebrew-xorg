@@ -5,6 +5,11 @@ class XorgSgmlDoctools < Formula
   sha256 "986326d7b4dd2ad298f61d8d41fe3929ac6191c6000d6d7e47a8ffc0c34e7426"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "a8cbbf67a25aa1fae0054621a20a7d717b47b1967e04003b36666db92dfdb43f" => :x86_64_linux
+  end
+
   depends_on "util-macros"
 
   def install
