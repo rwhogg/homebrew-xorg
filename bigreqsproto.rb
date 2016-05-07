@@ -5,6 +5,11 @@ class Bigreqsproto < Formula
   sha256 "462116ab44e41d8121bfde947321950370b285a5316612b8fce8334d50751b1e"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "204f49efe8ca9252a02645166810b3f1e8fe7d14e7298977cb41fc2bb3b945bd" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
