@@ -5,6 +5,11 @@ class Libxau < Formula
   sha256 "fdd477320aeb5cdd67272838722d6b7d544887dfe7de46e1e7cc0c27c2bea4f2"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "d1582ba4746a6b2c326bf25abb627c80b1302d17ee08158eabf3f2e6205b2ec4" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
 
