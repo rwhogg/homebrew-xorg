@@ -6,6 +6,11 @@ class XorgProtocols < Formula
   sha256   "846477dd316964fe52e9f73c3752d3c0383f7099046dd06ddfda92c2f9baad5d"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "7ed972478c2ce565fb5abb7b3fb2377d29671137b8ec46f30ffcf9e966dd96d0" => :x86_64_linux
+  end
+
   option "with-specs", "Build specifications (where applicable)"
 
   depends_on "xorg-sgml-doctools" => :build if build.with?("specs")
