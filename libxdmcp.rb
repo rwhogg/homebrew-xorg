@@ -5,6 +5,11 @@ class Libxdmcp < Formula
   sha256 "81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "b6ce973996bb3bee6493bf298605cabdebb538ff3092d97e9b98f2eeb7f24da3" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
