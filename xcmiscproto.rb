@@ -5,6 +5,11 @@ class Xcmiscproto < Formula
   sha256 "b13236869372256c36db79ae39d54214172677fb79e9cdc555dceec80bd9d2df"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "46caab02275016fa14276b31198a280a928336004767f5808a78617efbb8814f" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
