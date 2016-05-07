@@ -5,6 +5,11 @@ class Scrnsaverproto < Formula
   sha256 "8bb70a8da164930cceaeb4c74180291660533ad3cc45377b30a795d1b85bcd65"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "95e9cd1b7784a93ae47b0a474e83653bdb0bed950852c4dff163fee559b50544" => :x86_64_linux
+  end
+
   option "with-specs",  "Build specifications"
 
   depends_on "pkg-config"         =>  :build
