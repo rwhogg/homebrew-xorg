@@ -5,6 +5,10 @@ class Libx11 < Formula
   sha256 "cf31a7c39f2f52e8ebd0db95640384e63451f9b014eed2bb7f5de03e8adc8111"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "acfc0cdc997ab0d053a534eb0c951fb0fc6fe5d97a6a66b54db8c6328fb499c9" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
