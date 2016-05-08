@@ -6,7 +6,7 @@ class FontUtil < Formula
   sha256 "aa7ebdb0715106dd255082f2310dbaa2cd7e225957c2a77d719720c7cc92b921"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config"    =>  :build
   depends_on "util-macros"   =>  :build
@@ -22,7 +22,7 @@ class FontUtil < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

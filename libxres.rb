@@ -5,7 +5,7 @@ class Libxres < Formula
   sha256 "26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -27,7 +27,7 @@ class Libxres < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

@@ -10,7 +10,7 @@ class Libxcb < Formula
     sha256 "0fc412d2067b0732c6795367feb8dfeac496e50f44bd30482c2bfd350393fd80" => :x86_64_linux
   end
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Generate API documentation"
 
@@ -20,7 +20,7 @@ class Libxcb < Formula
   depends_on "libxdmcp"    => :recommended
 
   depends_on "doxygen" => :build if !build.with?("docs")
-  depends_on "check"   => :build if build.with?("check")
+  depends_on "check"   => :build if build.with?("test")
   depends_on "libxslt" => [:build, :optional]
 
   def install
@@ -43,7 +43,7 @@ class Libxcb < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

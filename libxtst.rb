@@ -5,7 +5,7 @@ class Libxtst < Formula
   sha256 "ef0a7ffd577e5f1a25b1663b375679529663a1880151beaa73e9186c8309f6d9"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
@@ -40,7 +40,7 @@ class Libxtst < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

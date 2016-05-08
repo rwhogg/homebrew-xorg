@@ -9,7 +9,7 @@ class XorgDocs < Formula
   # so we build docs + specs unless requested otherwise
   option "without-docs",  "Do not build documentation"
   option "without-specs", "Do not build specifications"
-  option "with-check",    "Run a check before installation"
+  option "without-test",  "Skip compile-time testsation"
 
   depends_on "util-macros" => [:build, :recommended]
   depends_on "xmlto"       =>  :build
@@ -36,7 +36,7 @@ class XorgDocs < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

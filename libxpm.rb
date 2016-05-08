@@ -9,7 +9,7 @@ class Libxpm < Formula
     sha256 "a9b2986ef5078c882eee59116658484bf61fdd13d8d1d61b737ff26445d8c8f2" => :x86_64_linux
   end
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -29,7 +29,7 @@ class Libxpm < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

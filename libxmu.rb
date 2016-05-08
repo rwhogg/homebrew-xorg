@@ -9,7 +9,7 @@ class Libxmu < Formula
     sha256 "9ef38b4bb41942c12149db60cfde607fa14ffc3bfdcb1e3408dda612606cfca4" => :x86_64_linux
   end
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
 
@@ -48,7 +48,7 @@ class Libxmu < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

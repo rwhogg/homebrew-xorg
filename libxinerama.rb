@@ -5,7 +5,7 @@ class Libxinerama < Formula
   sha256 "7a45699f1773095a3f821e491cbd5e10c887c5a5fce5d8d3fced15c2ff7698e2"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -27,7 +27,7 @@ class Libxinerama < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

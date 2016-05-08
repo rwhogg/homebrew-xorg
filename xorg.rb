@@ -9,15 +9,15 @@ class Xorg < Formula
 
   option "with-docs",       "Build documentation and specifications (where applicable)"
   option "with-python3",    "Build xcb-proto with python3 (default python is used otherwise)"
-  option "with-check",      "Run a check before install (where applicable)"
+  option "without-test",    "Skip compile-time tests"
   option "with-static",     "Build static libraries (not recommended)"
 
   # Build a list of requested compile flags for formulas
-  args_docs       = "#{ build.with?("docs")   ? "with-docs"        : "" }"
-  args_devel_docs = "#{ build.with?("docs")   ? "with-devel-docs"  : "" }"
-  args_specs      = "#{ build.with?("docs")   ? "with-specs"       : "" }"
-  args_check      = "#{ build.with?("check")  ? "with-check"       : "" }"
-  args_static     = "#{ build.with?("static") ? "with-static"      : "" }"
+  args_docs       = "#{ build.with?("docs")    ? "with-docs"        : "" }"
+  args_devel_docs = "#{ build.with?("docs")    ? "with-devel-docs"  : "" }"
+  args_specs      = "#{ build.with?("docs")    ? "with-specs"       : "" }"
+  args_check      = "#{ build.without?("test") ? "without-test"     : "" }"
+  args_static     = "#{ build.with?("static")  ? "with-static"      : "" }"
 
   # Frequently Used Option
   args_check_static = [args_check, args_static].reject(&:empty?)

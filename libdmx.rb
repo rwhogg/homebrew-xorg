@@ -5,7 +5,7 @@ class Libdmx < Formula
   sha256 "c97da36d2e56a2d7b6e4f896241785acc95e97eb9557465fd66ba2a155a7b201"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -28,7 +28,7 @@ class Libdmx < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

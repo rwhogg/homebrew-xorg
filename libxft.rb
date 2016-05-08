@@ -5,7 +5,7 @@ class Libxft < Formula
   sha256 "f5a3c824761df351ca91827ac221090943ef28b248573486050de89f4bfcdc4c"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-brewed-bzip2", "Use brewed bzip2"
   option "with-brewed-zlib", "Use brewed zlib"
@@ -30,7 +30,7 @@ class Libxft < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

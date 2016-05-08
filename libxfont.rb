@@ -5,7 +5,7 @@ class Libxfont < Formula
   sha256 "b70898527c73f9758f551bbab612af611b8a0962202829568d94f3edf4d86098"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
@@ -52,7 +52,7 @@ class Libxfont < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

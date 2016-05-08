@@ -10,7 +10,7 @@ brew tap linuxbrew/homebrew-xorg &&
 brew install xorg
 ```
 
-This will install (all) Xorg libraries. It does take time. To see the progress of the installation enable verbose messaging by providing `-v` (`--verbose`) flag:
+This will install (all) Xorg libraries. To see the progress of the installation enable verbose messaging by providing `-v` (`--verbose`) flag:
 
 ```bash
 brew install -v xorg
@@ -25,16 +25,16 @@ brew install <formula-name>
 ## Requirements
 
 Main dependencies of the Xorg libraries are:
-  * `fontconfig`
-  * `autoconf`
+  * `fontconfig` (required by `libxft`)
+  * `freetype`   (required by `libxfont`)
   * `pkg-config`
-  * `python` (`python2` or `python3`)
+  * `python`: `python2` or `python3` (required by `xcb-proto`)
 
 To build documentation (enabled with `--with-docs` flag), the following packages are required:
   * `xorg-sgml-doctools` (recommended, installed by default)
+  * `xmlto`
   * `fop`<sup>1</sup> 
   * `libxslt`
-  * `xmlto`
   * `asciidoc`
   * `w3m`<sup>2</sup>
 
@@ -65,10 +65,11 @@ To use `python3` when building `xcb-proto` package, use `--with-python3` flag, _
 brew install xorg --with-python3
 ```
 
-To issue `make check` before `make install` where applicable, use `--with-check` flag, _i.e._:
+When building packages from source code, compile-time tests are enabled by default.
+To skip then, use `--without-test` flag, _i.e._:
 
 ```bash
-brew install xorg --with-check
+brew install xorg --build-from-source --without-test
 ```
 
 You can also build static libraries (though, this is neither required nor recommended) using `--with-static` flag, _i.e._:

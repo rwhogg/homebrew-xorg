@@ -5,7 +5,7 @@ class Libxv < Formula
   sha256 "55fe92f8686ce8612e2c1bfaf58c057715534419da700bda8d517b1d97914525"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -25,7 +25,7 @@ class Libxv < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

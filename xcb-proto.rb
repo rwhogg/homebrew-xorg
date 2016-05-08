@@ -5,7 +5,7 @@ class XcbProto < Formula
   sha256 "b4aceee6502a0ce45fc39b33c541a2df4715d00b72e660ebe8c5bb444771e32e"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-tests",  "Run tests upon installation"
   option "with-python3", "Build with python3 (default version is used otherwise)"
 
@@ -32,7 +32,7 @@ class XcbProto < Formula
     end
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

@@ -9,7 +9,7 @@ class Libxt < Formula
     sha256 "b4b320417e8883d375055a5fb272f9c069587e60ab7fbe9ff0ca365808e989e6" => :x86_64_linux
   end
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
   option "with-glib",   "Build with glib (for unit testing)"
@@ -56,7 +56,7 @@ class Libxt < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

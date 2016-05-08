@@ -9,7 +9,7 @@ class Libx11 < Formula
     sha256 "acfc0cdc997ab0d053a534eb0c951fb0fc6fe5d97a6a66b54db8c6328fb499c9" => :x86_64_linux
   end
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
@@ -49,7 +49,7 @@ class Libx11 < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end

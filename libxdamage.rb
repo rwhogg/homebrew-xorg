@@ -5,7 +5,7 @@ class Libxdamage < Formula
   sha256 "7c3fe7c657e83547f4822bfde30a90d84524efb56365448768409b77f05355ad"
   # tag "linuxbrew"
 
-  option "with-check",  "Run a check before install"
+  option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" =>  :build
@@ -29,7 +29,7 @@ class Libxdamage < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("check")
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end
