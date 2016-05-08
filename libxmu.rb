@@ -5,6 +5,10 @@ class Libxmu < Formula
   sha256 "756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "9ef38b4bb41942c12149db60cfde607fa14ffc3bfdcb1e3408dda612606cfca4" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
