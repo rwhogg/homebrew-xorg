@@ -5,6 +5,11 @@ class Libxext < Formula
   sha256 "b518d4d332231f313371fdefac59e3776f4f0823bcb23cf7c7305bfb57b16e35"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "00ba831ed41f21fa1f0bbdbff41db6a6bb8c188b99f2665369aa0cbe3ec94ac1" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
