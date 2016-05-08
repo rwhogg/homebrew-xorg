@@ -5,6 +5,11 @@ class Libxrender < Formula
   sha256 "fc2fe57980a14092426dffcd1f2d9de0987b9d40adea663bd70d6342c0e9be1a"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "86916def7aab225ce04748be225dee617ee71369df774bcbbc1d1117cede3b65" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
 
