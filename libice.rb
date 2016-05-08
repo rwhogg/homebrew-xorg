@@ -5,6 +5,11 @@ class Libice < Formula
   sha256 "8f7032f2c1c64352b5423f6b48a8ebdc339cc63064af34d66a6c9aa79759e202"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "68cbbeb20dc4db408dba453e9af9eee7274d17f9bb99f7c862ab087d2239b754" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
