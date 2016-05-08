@@ -5,6 +5,11 @@ class Libxcb < Formula
   sha256 "b720fd6c7d200e5371affdb3f049cc8f88cff9aed942ff1b824d95eedbf69d30"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "0fc412d2067b0732c6795367feb8dfeac496e50f44bd30482c2bfd350393fd80" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Generate API documentation"
