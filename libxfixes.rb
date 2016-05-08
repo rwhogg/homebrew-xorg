@@ -5,6 +5,11 @@ class Libxfixes < Formula
   sha256 "63bec085084fa3caaee5180490dd871f1eb2020ba9e9b39a30f93693ffc34767"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "eff8e0a159e7b64ef860bace99d92bcfe6b72cf73229c302b3c0adbaab8c0eec" => :x86_64_linux
+  end
+
   option "with-check",  "Run a check before install"
   option "with-static", "Build static libraries (not recommended)"
 
