@@ -5,6 +5,11 @@ class Libxi < Formula
   sha256 "1f32a552cec0f056c0260bdb32e853cec0673d2f40646ce932ad5a9f0205b7ac"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "c537519f07bb35b0605fdfb8a31b13a72af249fa080136cff8a9366e45b37840" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs",   "Build documentation"
