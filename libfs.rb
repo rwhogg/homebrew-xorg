@@ -5,6 +5,11 @@ class Libfs < Formula
   sha256 "2e9d4c07026a7401d4fa4ffae86e6ac7fec83f50f3268fa85f52718e479dc4f3"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "cd6286cff0b75492f2ccf77ed7b9a26b0f89f75d178a8b60e660a77bb8710620" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
