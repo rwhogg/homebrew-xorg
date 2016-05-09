@@ -5,6 +5,11 @@ class Libxv < Formula
   sha256 "55fe92f8686ce8612e2c1bfaf58c057715534419da700bda8d517b1d97914525"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "42d55fb18f9626930bca219df54d20b016c2931696d8bbb1d26ad75f8eedbb28" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
