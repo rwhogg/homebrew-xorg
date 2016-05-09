@@ -5,6 +5,11 @@ class Xtrans < Formula
   sha256 "adbd3b36932ce4c062cd10f57d78a156ba98d618bdb6f50664da327502bc8301"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "90e5852ee25ed85ba47acaa55723a0506c8313c599671b892024ac1766b15449" => :x86_64_linux
+  end
+
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" =>  :build
