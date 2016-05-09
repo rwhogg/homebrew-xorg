@@ -5,6 +5,11 @@ class Libxscrnsaver < Formula
   sha256 "8ff1efa7341c7f34bcf9b17c89648d6325ddaae22e3904e091794e0b4426ce1d"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "75cfe204c369532370b5fdebd844d2fa49d006ddeaed9c4642833b7a2e57c9dd" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
