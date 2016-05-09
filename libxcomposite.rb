@@ -5,6 +5,11 @@ class Libxcomposite < Formula
   sha256 "ede250cd207d8bee4a338265c3007d7a68d5aca791b6ac41af18e9a2aeb34178"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "dee697e5ac68ee9cf255ddadb7ab3d847211ace22493e22442bea3d997d24659" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
