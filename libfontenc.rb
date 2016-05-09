@@ -5,6 +5,10 @@ class Libfontenc < Formula
   sha256 "70588930e6fc9542ff38e0884778fbc6e6febf21adbab92fd8f524fe60aefd21"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "62966fcff8983e11ad73ba816c1df0837f4263b94be9ec184e8615047657f845" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
