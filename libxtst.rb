@@ -9,6 +9,7 @@ class Libxtst < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
 
+  depends_on "util-macros" => :build
   depends_on "pkg-config" =>  :build
   depends_on "libxi"
 
