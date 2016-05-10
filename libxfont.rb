@@ -5,6 +5,11 @@ class Libxfont < Formula
   sha256 "b70898527c73f9758f551bbab612af611b8a0962202829568d94f3edf4d86098"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "8b71f987f0e359072c3bfdafc05a684bf1ca6325e7868b36701813ab3e643dec" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
