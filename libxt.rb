@@ -16,7 +16,7 @@ class Libxt < Formula
 
   depends_on "pkg-config" =>  :build
 
-  depends_on "libsm"      =>  :build
+  depends_on "libsm"
   depends_on "libice"
   depends_on "libx11"
   depends_on "xproto"     =>  :build
