@@ -6,7 +6,6 @@ class XcbProto < Formula
   # tag "linuxbrew"
 
   option "without-test", "Skip compile-time tests"
-  option "with-tests",  "Run tests upon installation"
   option "with-python3", "Build with python3 (default version is used otherwise)"
 
   depends_on "pkg-config"  => :build
@@ -17,7 +16,7 @@ class XcbProto < Formula
     depends_on :python       => :build
   end
 
-  depends_on "libxml2"    => :build if build.with?("tests") # to run tests
+  depends_on "libxml2"    => :build if build.with?("test") # to run tests
 
   def install
     args = %W[
