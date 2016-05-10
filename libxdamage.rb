@@ -5,6 +5,11 @@ class Libxdamage < Formula
   sha256 "7c3fe7c657e83547f4822bfde30a90d84524efb56365448768409b77f05355ad"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "399e510a78f416268e583f948595884cf458db56098b779fb94f823240b65a14" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
