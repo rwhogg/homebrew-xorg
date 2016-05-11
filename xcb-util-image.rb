@@ -28,13 +28,12 @@ class XcbUtilImage < Formula
     args << "--enable-devel-docs=#{build.with?("docs") ? "yes" : "no"}"
     args << "--with-doxygen=#{build.with?("docs") ? "yes" : "no"}"
 
-
     system "./configure", *args
     system "make"
-    if build.with?("test")
-      ENV["LD_LIBRARY_PATH"] = "#{lib}"
-      system "make", "check"
-    end
+    # Here we deviate from LFS instructions that specify
+    # the following command:
+    #    LD_LIBRARY_PATH=$XORG_PREFIX/lib make check
+    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end
