@@ -5,6 +5,11 @@ class Libxrandr < Formula
   sha256 "6f864959b7fc35db11754b270d71106ef5b5cf363426aa58589cb8ac8266de58"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "6d362e11582df8ff7a9e48c24fd2708287184e82fd82909fccfc55c270d13dd9" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
