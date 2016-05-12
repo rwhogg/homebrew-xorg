@@ -5,6 +5,11 @@ class Libxinerama < Formula
   sha256 "7a45699f1773095a3f821e491cbd5e10c887c5a5fce5d8d3fced15c2ff7698e2"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "a3ee24b79619182dc6eb91705e6b5ae2eb87f68cf2b02c15513f3734c5a89b13" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
