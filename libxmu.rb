@@ -6,7 +6,8 @@ class Libxmu < Formula
   # tag "linuxbrew"
 
   bottle do
-    sha256 "9ef38b4bb41942c12149db60cfde607fa14ffc3bfdcb1e3408dda612606cfca4" => :x86_64_linux
+    revision 1
+    sha256 "2b0c683b9deddbed3c238bf167b96ada9e76587f22ed0a8d28d8f87955d38e20" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
