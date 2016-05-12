@@ -5,6 +5,11 @@ class Libxres < Formula
   sha256 "26899054aa87f81b17becc68e8645b240f140464cf90c42616ebb263ec5fa0e5"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "0985d29cbc53e7afdf8b0f01acc5ad3b39bdd9a036a0f773f25c6199b97fc5fe" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
