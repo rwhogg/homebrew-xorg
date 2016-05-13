@@ -5,6 +5,10 @@ class Libxvmc < Formula
   sha256 "0703d7dff6ffc184f1735ca5d4eb9dbb402b522e08e008f2f96aee16c40a5756"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "bbd955417a3c14dd67a31a11bac65757d8fca143fca2895404ab04aad116637b" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
