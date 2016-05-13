@@ -5,6 +5,11 @@ class Libxtst < Formula
   sha256 "ef0a7ffd577e5f1a25b1663b375679529663a1880151beaa73e9186c8309f6d9"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "4a18721188f3cb3a170eb5670226b748430b4dddd68cadc2fcd63f60110fb73a" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs",  "Build specifications"
