@@ -5,6 +5,11 @@ class Libpciaccess < Formula
   sha256 "07f864654561e4ac8629a0ef9c8f07fbc1f8592d1b6c418431593e9ba2cf2fcf"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "b0ce22591ed9ec00fccd13a08bb10d93f4b786a4554dba9cd476702c82b8039d" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
