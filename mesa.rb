@@ -11,10 +11,11 @@ class Mesa < Formula
   depends_on "xorg"
   depends_on "libdrm"
   depends_on "systemd"
-  depends_on "llvm" => ["HEAD", "with-clang", "with-clang-extra-tools", "with-compiler-rt", "with-rtti", "with-shared"]
+  depends_on "llvm" => ["with-clang", "with-clang-extra-tools", "with-compiler-rt", "with-rtti", "with-shared"] # :head HAS TO BE HEAD!!!
   depends_on "libelf" #?
   depends_on "libomxil-bellagio"
-  depends_on "wayland" => "HEAD"
+  depends_on "wayland" # => HEAD is preferred
+
 # depends_on "util-macros" => :build
 # depends_on "autoconf" => :build
 # depends_on "libtool" => :build
