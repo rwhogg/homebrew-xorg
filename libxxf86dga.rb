@@ -5,6 +5,11 @@ class Libxxf86dga < Formula
   sha256 "8eecd4b6c1df9a3704c04733c2f4fa93ef469b55028af5510b25818e2456c77e"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "1cdae212078b6d5a2e3921938a54096390fa46ca13190a40b0e80c5bd6b596a7" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
