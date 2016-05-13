@@ -5,6 +5,11 @@ class Libdmx < Formula
   sha256 "c97da36d2e56a2d7b6e4f896241785acc95e97eb9557465fd66ba2a155a7b201"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "ecaf5224f64f66117ad4bbcd6a380086468eb642b807ea93f0573c2d1e8d5e5e" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
