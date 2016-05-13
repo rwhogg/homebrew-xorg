@@ -5,6 +5,10 @@ class XcbProto < Formula
   sha256 "b4aceee6502a0ce45fc39b33c541a2df4715d00b72e660ebe8c5bb444771e32e"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "23ccadabc4d8eb1d9a396c6c6ed1391b5ac0af0296246773a3fccf08ed9dda21" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-python3", "Build with python3 (default version is used otherwise)"
 
