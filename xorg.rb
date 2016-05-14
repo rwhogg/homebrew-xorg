@@ -7,6 +7,8 @@ class Xorg < Formula
   sha256   "f93f89000f05e50c9b27a00504815c7e1f2431d13ab838e60d3874bf356b8e1b"
   # tag "linuxbrew"
 
+  bottle :unneeded
+
   option "with-docs",       "Build documentation and specifications (where applicable)"
   option "with-python3",    "Build xcb-proto with python3 (default python is used otherwise)"
   option "without-test",    "Skip compile-time tests"
