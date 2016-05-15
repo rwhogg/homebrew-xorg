@@ -20,10 +20,10 @@ class Freeglut < Formula
 
   def install
 
-    args = %W[ -DCMAKE_INSTALL_PREFIX=#{prefix} ]
+    args = std_cmake_args
+    args << "-DCMAKE_INSTALL_PREFIX=#{prefix}"
     args << "-DFREEGLUT_BUILD_STATIC_LIBS=#{build.with?("static") ? "ON" : "OFF"}"
     args << "-DFREEGLUT_BUILD_DEMOS=#{build.with?("demos") ? "ON" : "OFF"}"
-
     args << ".."
 
     (buildpath/"build").mkpath
