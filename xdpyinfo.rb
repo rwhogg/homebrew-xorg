@@ -13,7 +13,7 @@ class Xdpyinfo < Formula
   depends_on "libx11"
   depends_on "libxtst"
   depends_on "libxcb"
-  depends_on "xproto"
+  depends_on "xproto" => :build
 
   def install
     args = %W[

@@ -11,7 +11,7 @@ class X11perf < Formula
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
   depends_on "libxmu"
-  depends_on "xproto"
+  depends_on "xproto" => :build
   depends_on "libxrender" # crucial
   depends_on "libxft" # not crucial
 

@@ -1,16 +1,16 @@
-class Xev < Formula
-  desc "X.Org Applications: xev"
+class Xgamma < Formula
+  desc "X.Org Applications: xgamma"
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7app.html
-  url    "https://www.x.org/pub/individual/app/xev-1.2.2.tar.bz2"
-  mirror "http://ftp.x.org/pub/individual/app/xev-1.2.2.tar.bz2"
-  sha256 "d94ae62a6c1af56c2961d71f5782076ac4116f0fa4e401420ac7e0db33dc314f"
+  url    "https://www.x.org/pub/individual/app/xgamma-1.0.6.tar.bz2"
+  mirror "http://ftp.x.org/pub/individual/app/xgamma-1.0.6.tar.bz2"
+  sha256 "0ef1c35b5c18b1b22317f455c8df13c0a471a8efad63c89c98ae3ce8c2b222d3"
   # tag "linuxbrew"
 
 
   depends_on "pkg-config" =>  :build
-  depends_on "libxrandr"
   depends_on "libx11"
+  depends_on "libxxf86vm"
   depends_on "xproto" => :build
 
   def install
