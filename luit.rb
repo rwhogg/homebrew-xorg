@@ -10,6 +10,7 @@ class Luit < Formula
 
   depends_on "pkg-config" =>  :build
   depends_on "libx11"     =>  :build
+  depends_on "libfontenc" =>  :run
 
   patch :DATA
 
