@@ -16,6 +16,7 @@ class XorgDocs < Formula
   depends_on "fop"         => [:build, :recommended]
   depends_on "libxslt"     => [:build, :recommended]
   depends_on "xorg-sgml-doctools" => :build
+  depends_on "docbook-xsl" => :build
 
   # Patch for xmlto
   patch do
