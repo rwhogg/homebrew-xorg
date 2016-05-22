@@ -11,6 +11,7 @@ class Encodings < Formula
 
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
+  depends_on "mkfontscale" => :build
 
   def install
     args = %W[
