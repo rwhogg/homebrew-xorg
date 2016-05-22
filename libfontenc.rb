@@ -15,6 +15,7 @@ class Libfontenc < Formula
   depends_on "pkg-config" =>  :build
   depends_on "xproto"     =>  :build
   depends_on "font-util"  =>  :build
+  depends_on "encodings"  =>  :build
   depends_on "zlib"
 
   def install
