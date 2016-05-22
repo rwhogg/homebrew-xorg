@@ -49,7 +49,6 @@ class XorgFonts < Formula
 
   def install
     ohai "Xorg Fonts have been installed!"
-    ohai "#{@arg}"
     prefix.install "README.md" => "xorg-fonts.md"
   end
 end
