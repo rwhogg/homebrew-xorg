@@ -53,8 +53,7 @@ brew install xorg --with-docs
 ```
 
 This will install `xorg-docs` package and enable the following dependencies: `fop`, `libxslt`, `xmlto`. 
-
-[comment]: # Additional dependency on `asciidoc` can be requested with `--with-asciidoc` flag.
+There is an additional dependency on `asciidoc` for `inputproto` and `libxi` packages.
 
 To see the list of optional flags when compiling libraries with documentation, use:
 
