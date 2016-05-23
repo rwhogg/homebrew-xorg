@@ -7,8 +7,20 @@ class Mesa < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static",   "Build static libraries (not recommended)"
 
+  # DEPENDENCIES
   depends_on "pkg-config" => :build
-  depends_on "xorg"
+
+  # Python and it Mako module
+  depends_on :python => :build
+  resource "mako" do
+    url "https://pypi.python.org/packages/7a/ae/925434246ee90b42e8ef57d3b30a0ab7caf9a2de3e449b876c56dcb48155/Mako-1.0.4.tar.gz"
+    sha256 "fed99dbe4d0ddb27a33ee4910d8708aca9ef1fe854e668387a9ab9a90cbf9059"
+  end
+
+  depends_on "flex"  => :build
+  depends_on "bison" => :build
+
+  depends_on "xorg" # TODO: figure out which packages exactly are used and depend on them only
   depends_on "libdrm"
   depends_on "systemd"
   depends_on "llvm" => ["with-clang", "with-clang-extra-tools", "with-compiler-rt", "with-rtti", "with-shared"] # :head HAS TO BE HEAD!!!
@@ -21,10 +33,8 @@ class Mesa < Formula
   # There is a circular dependency with Mesa.
   #
   # Libva should be installed:
-  #  1. before Mesa with "disable-egl" and "disable-egl" options ~> this package
-  #  2. after  Mesa without the above options.
-  #
-  # The second installations is hard-coded into Mesa as a post-installation step
+  #  1. before Mesa with "disable-egl" and "disable-egl" options.
+  #  2. after  Mesa without the above two options. ~> this package
   #
 
   depends_on "libva" => :recommended
@@ -46,6 +56,11 @@ class Mesa < Formula
   end
 
   def install
+
+    resource("mako").stage do
+      system "python", *Language::Python.setup_install_args(libexec/"vendor")
+    end
+
     args = %W[
       CFLAGS=-O2
       CXXFLAGS=-O2
@@ -65,7 +80,6 @@ class Mesa < Formula
       --with-gallium-drivers=nouveau,r300,r600,radeonsi,svga,swrast
       --disable-llvm-shared-libs
     ]
-
     # Be explicit about the configure flags
     args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
@@ -75,9 +89,7 @@ class Mesa < Formula
     system "make", "check" if build.with?("test")
     system "make", "install"
     system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install"
-  end
 
-  def post_install
     if build.with?("libva")
       resource("libva").stage do
         args = %W[
@@ -90,6 +102,33 @@ class Mesa < Formula
 
         # Be explicit about the configure flags
         args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
+
+        ### Set environment flags:
+        # $ pkg-config --cflags egl | tr ' ' '\n'
+        # $ pkg-config --cflags gl  | tr ' ' '\n'
+        ENV["EGL_CFLAGS"] =  "-I#{include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].include}/libdrm"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["damageproto"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxfixes"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["fixesproto"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libx11"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxcb"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxxf86vm"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxext"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxau"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdmcp"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["xproto"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["kbproto"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["xextproto"].include}"
+        ENV.append "EGL_CFLAGS", "-I#{Formula["xf86vidmodeproto"].include}"
+
+        ENV["GLX_CFLAGS"] = ENV["EGL_CFLAGS"]
+
+        ENV["EGL_LIBS"] = "-L#{lib} -lEGL"
+        ENV["GLX_LIBS"] = "-L#{lib} -lGL"
+
 
         system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed
         system "./configure", *args
