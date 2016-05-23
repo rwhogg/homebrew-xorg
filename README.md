@@ -10,7 +10,7 @@ brew tap linuxbrew/homebrew-xorg &&
 brew install xorg
 ```
 
-This will install (all) Xorg libraries. To see the progress of the installation enable verbose messaging by providing `-v` (`--verbose`) flag:
+This will install (all) Xorg libraries. To see the progress of the installation, enable verbose messaging by providing the `-v` (`--verbose`) flag:
 
 ```bash
 brew install -v xorg
@@ -25,22 +25,22 @@ brew install <formula-name>
 ## Requirements
 
 Main dependencies of the Xorg libraries are:
-  * `fontconfig` (required by `libxft`)
-  * `freetype`   (required by `libxfont`)
-  * `pkg-config`
-  * `python`: `python2` or `python3` (required by `xcb-proto`)
+  * `pkg-config`: to build packages from source
+  * `fontconfig`: required by `libxft`
+  * `freetype`:   required by `libxfont`
+  * `python`:     required by `xcb-proto`
 
 To build documentation (enabled with `--with-docs` flag), the following packages are required:
-  * `xorg-sgml-doctools` (recommended, installed by default)
+  * `xorg-sgml-doctools`
   * `xmlto`
-  * `fop`<sup>1</sup> 
+  * `fop`<sup>1</sup>
   * `libxslt`
   * `asciidoc`
   * `w3m`<sup>2</sup>
 
 *1*: reciprocal dependency is not resolved at the present time but it does not affect the build process
 <br>
-*2*: currently does not build on Linux
+*2*: currently does not build on Linux, hence, not used.
 
 ## Details
 
@@ -52,7 +52,10 @@ To build documentation, use `--with-docs` flag, _i.e._:
 brew install xorg --with-docs
 ```
 
-This will install `xorg-docs` package and enable the following dependencies: `fop`, `libxslt`, `xmlto`. Additional dependency on `asciidoc` can be requested with `--with-asciidoc` flag.
+This will install `xorg-docs` package and enable the following dependencies: `fop`, `libxslt`, `xmlto`. 
+
+[comment]: # Additional dependency on `asciidoc` can be requested with `--with-asciidoc` flag.
+
 To see the list of optional flags when compiling libraries with documentation, use:
 
 ```bash
@@ -78,13 +81,13 @@ You can also build static libraries (though, this is neither required nor recomm
 brew install xorg --with-static
 ```
 
-You can combine all the options (flags) above, _i.e._:
+You can combine (all) of the above options (flags), _i.e._:
 
 ```bash
-brew install xorg --with-docs --with-python3 --with-check --with-static
+brew install xorg --with-docs --with-python3
 ```
 
 ## Issues / Ongoing work
 
 * Reciprocal dependency with `fop` is not resolved. As a result, not all documentation might be built.
-* Provide other Xorg packages 
+* Provide other Xorg packages

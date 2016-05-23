@@ -4,7 +4,7 @@ class Xorg < Formula
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/README.md"
   version  "20160314"
-  sha256   "f93f89000f05e50c9b27a00504815c7e1f2431d13ab838e60d3874bf356b8e1b"
+  sha256   "c971c51e51b9dc02a605f868e6ef0524cad9291a0d20466064a72e30298055a1"
   # tag "linuxbrew"
 
   bottle :unneeded
