@@ -19,7 +19,7 @@ class Libxfont < Formula
 
   # Required dependencies
   depends_on "pkg-config" =>  :build
-  depends_on "xproto"     =>  :build
+  depends_on "xproto"
   depends_on "xtrans"     =>  :build
   depends_on "fontsproto" =>  :build
   depends_on "libfontenc"
