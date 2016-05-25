@@ -10,6 +10,7 @@ class Mkfontdir < Formula
 
   depends_on "pkg-config"  => :build
   depends_on "util-macros" => :build
+  depends_on "mkfontscale" => :run
 
   def install
     args = %W[
