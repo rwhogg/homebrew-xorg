@@ -7,6 +7,11 @@ class Bdftopcf < Formula
   sha256 "38f447be0c61f94c473f128cf519dd0cff63b5d7775240a2e895a183a61e2026"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any
+    sha256 "0189f9d16ceacee801ecf1f0ff438fabac5d1ff23ce021b6a7ca1039a25331a2" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "libxfont"
   depends_on "bzip2"
