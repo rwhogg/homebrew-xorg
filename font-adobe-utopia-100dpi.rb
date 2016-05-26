@@ -8,6 +8,10 @@ class FontAdobeUtopia100dpi < Formula
   sha256 "d16f5e3f227cc6dd07a160a71f443559682dbc35f1c056a5385085aaec4fada5"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "aeb3af78a0778f2cffb6428f710284bf5d20596525df20eb1b6920fe3af9b15f" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
