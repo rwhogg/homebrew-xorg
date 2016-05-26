@@ -8,6 +8,10 @@ class FontAdobe75dpi < Formula
   sha256 "c6024a1e4a1e65f413f994dd08b734efd393ce0a502eb465deb77b9a36db4d09"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "7b425c35d4f255a4fa59a32c24fbefae73953cf45b7940b3b4cc985a132c384d" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
