@@ -8,6 +8,10 @@ class FontBhTtf < Formula
   sha256 "1b4bea63271b4db0726b5b52c97994c3313b6023510349226908090501abd25f"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "f01863adce18332c22535971770a6a67a2d2bc111ab93beff33d06b9a8d3e164" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
