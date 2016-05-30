@@ -8,6 +8,10 @@ class FontCronyxCyrillic < Formula
   sha256 "6e8631936157677c77ba032b5c7b1fb3cb2ee872dbcea0444f12cd602cd9212a"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "dca7e783946ccb0cbdf8e297d7549a7e3daeaad169a0fddd7cf77ea1188ff9b6" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
