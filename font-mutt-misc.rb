@@ -8,6 +8,10 @@ class FontMuttMisc < Formula
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "5c8837af4e8ba9511d30d38d90be64bccd4256daffbdc189bc46c092633ce506" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
