@@ -8,6 +8,10 @@ class FontMiscEthiopic < Formula
   sha256 "53cb1fd83afdbe7939c0eac34003676ee0e6023216892d98054db90b703c98a5"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "ca2730d3bfe838fbaaf49bfad6c78db1ce85305cb8abd64cb6a425328a987b94" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
