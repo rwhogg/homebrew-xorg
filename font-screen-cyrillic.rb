@@ -8,6 +8,10 @@ class FontScreenCyrillic < Formula
   sha256 "824231e8dffe15299454e47259f29d98001c9cf8ad3d6b5171399e4d71705e79"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "27754e120971e753c86a2e2fde9c739c804611933ae390dbceb708dbe0f3d1cb" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
