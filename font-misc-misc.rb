@@ -8,6 +8,10 @@ class FontMiscMisc < Formula
   sha256 "b8e77940e4e1769dc47ef1805918d8c9be37c708735832a07204258bacc11794"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "5fbec6f8904e141da0b44a93e963db72e341eee92ce8d61182f8e5d43ce69f66" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
