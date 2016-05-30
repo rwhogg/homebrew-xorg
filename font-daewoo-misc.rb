@@ -8,6 +8,10 @@ class FontDaewooMisc < Formula
   sha256 "bc65de70bee12698caa95b523d3b652c056347e17b68cc8b5d6bbdff235c4be8"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "0d99d58f44256f08785841a8e4e12ec64df5c35abd74ca9e6dcf054293b2390e" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
