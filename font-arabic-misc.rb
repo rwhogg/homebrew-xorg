@@ -8,6 +8,10 @@ class FontArabicMisc < Formula
   sha256 "505d9b12a7093389e67a925dfda6346bde26d114c67f0cdca7aeda6e5d3344f4"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "85afd0f55f2cd1d3543b44e5b034156d0623c06f6485c648166c1328e3f714c4" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
