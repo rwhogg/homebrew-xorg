@@ -8,6 +8,10 @@ class FontXfree86Type1 < Formula
   sha256 "caebf42aec7be7f3bd40e0f232d6f34881b853dc84acfcdf7458358701fbe34a"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "298bff88234021c2634c000c8fb31df0625edf7fb1f10b86c502ec4ae38228fd" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
