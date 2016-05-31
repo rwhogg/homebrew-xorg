@@ -8,6 +8,10 @@ class FontMiscCyrillic < Formula
   sha256 "e40fe3e3323c62b738550795457ad555c70c008aa91b5912dfd46f8e745f5e60"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "75be1b09f79b6d72360be15db6959043499b4aa04222c12a196dd749da8edba2" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
