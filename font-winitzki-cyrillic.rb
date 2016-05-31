@@ -8,6 +8,10 @@ class FontWinitzkiCyrillic < Formula
   sha256 "abd13b63d02fcaec488686c23683e5cf640b43bd32f8ca22eeae6f84df0a36a0"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "19cbf7aa2ee599b84be7cfdc0343b1a6a7a8e78f7e26d89dce0186a90970844a" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
