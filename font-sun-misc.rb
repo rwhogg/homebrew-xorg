@@ -8,6 +8,10 @@ class FontSunMisc < Formula
   sha256 "481f4fcbbf7005658b080b3cf342c8c76de752e77f47958b2b383de73266d2e0"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "f65fc8eafb10e26312b72b9388b4531c8e96a93e33f837879e7b0afcb04a3de1" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
