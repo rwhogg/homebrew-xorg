@@ -7,6 +7,10 @@ class Xpr < Formula
   sha256 "fed98df31eb93d3dca4688cb535aabad06be572e70ace3b1685679c18dd86cb5"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "16e431229c4449d346f353b3776293362d252a90f52d6815feefbff7ac28d748" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
