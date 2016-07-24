@@ -7,6 +7,10 @@ class X11perf < Formula
   sha256 "e87098dec1947572d70c62697a7b70bde1ab5668237d4660080eade6bc096751"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "44fd4be54b3c9608490dea106d2ad134d6de072135e9d6b602848e2a2b5553c6" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
