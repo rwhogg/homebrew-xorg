@@ -7,6 +7,11 @@ class Xkill < Formula
   sha256 "88ef2a304f32f24b255e879f03c1dcd3a2be3e71d5562205414f267d919f812e"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "230a7daf447a45a70ec70effac3fecab5c56a3fc62c29987a4f2497e099048a7" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
