@@ -7,6 +7,11 @@ class Xrdb < Formula
   sha256 "73827b6bbfc9d27ca287d95a1224c306d7053cd7b8156641698d7dc541ca565b"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "1cb029caf85881e385b1282c82ddbb4fc982998ed480221990f23e96b2b62820" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
