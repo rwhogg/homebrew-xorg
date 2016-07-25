@@ -7,6 +7,10 @@ class Xrefresh < Formula
   sha256 "3213671b0a8a9d1e8d1d5d9e3fd86842c894dd9acc1be2560eda50bc1fb791d6"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "d67050f24859d830f0d9abf1427651125cd70027c72e1ec649e8e1bf2b046158" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
