@@ -7,6 +7,9 @@ class Setxkbmap < Formula
   sha256 "a9ddb3963f263ba13f0ea105d8c45a531832140530217cc559587bb94f02d3e1"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "03e3d22d49be9eb2e6d667e9b3a748e6b034bf78b701ffbdc06742654b13d407" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libxkbfile"
