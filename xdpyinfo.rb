@@ -7,6 +7,11 @@ class Xdpyinfo < Formula
   sha256 "30238ed915619e06ceb41721e5f747d67320555cc38d459e954839c189ccaf51"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5ad449cbcce936b2d12f06b938626c06782f38bce097b6121d639d4df14364b7" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "libxext"
   depends_on "libx11"
