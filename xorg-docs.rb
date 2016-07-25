@@ -5,6 +5,11 @@ class XorgDocs < Formula
   sha256 "b9b1918bd365e9eb29c325e76bb8c4d774d37be707e433fb0af94da35683375f"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "92ae6d07bfe4465a33e050a408ca9f5f6d3c6b90e8334055d7e885a3ca37a8bd" => :x86_64_linux
+  end
+
   # unlike other packages, this one is all about documentation
   # so we build docs + specs unless requested otherwise
   option "without-docs",  "Do not build documentation"
