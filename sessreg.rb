@@ -7,6 +7,11 @@ class Sessreg < Formula
   sha256 "551177657835e0902b5eee7b19713035beaa1581bbd3c6506baa553e751e017c"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "17242c86ba919ff7bc10828ef3700ed097cb661508918c1bf8d0c75c748584df" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto"     =>  :build
 
