@@ -8,6 +8,10 @@ class XcursorThemes < Formula
   sha256 "e3fd2c05b9df0d88a3d1192c02143295744685f4f9a03db116e206698331bb86"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "5191796c5ae5b8cb6d6e32be715fe4b839e7a060a3abbc6342314fc9c10c72c9" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libxcursor"
