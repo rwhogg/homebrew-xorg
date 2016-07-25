@@ -8,6 +8,11 @@ class XorgCfFiles < Formula
   sha256 "4dcf5a9dbe3c6ecb9d2dd05e629b3d373eae9ba12d13942df87107fdc1b3934d"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "3a198c7af0bc958b6936c9fc8486a54a0fd859c09e0e2f0d2f5e5ce094a04e33" => :x86_64_linux
+  end
+
   depends_on "pkg-config" => :build
   depends_on "font-util"  => :build
 
