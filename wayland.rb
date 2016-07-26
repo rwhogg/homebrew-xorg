@@ -1,8 +1,8 @@
 class Wayland < Formula
   desc "A protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "http://wayland.freedesktop.org/releases/wayland-1.10.0.tar.xz"
-  sha256 "4bf6e790aa6f50ab3825676282ecd75850ec9c4767af96ecb7127b1f3c3d60dc"
+  url "https://wayland.freedesktop.org/releases/wayland-1.10.93.tar.xz"
+  sha256 "a0fbe4e27f6a09ee251e1326f0a17ac8159cdbd894c1e6190ee64c3d37086836"
 
   bottle do
     sha256 "3bf01bfe3ae2090fcd3444a925c546aec8e0528d8b46d5d2b9e418c96246fd61" => :x86_64_linux
