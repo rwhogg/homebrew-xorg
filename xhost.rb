@@ -7,7 +7,6 @@ class Xhost < Formula
   sha256 "93e619ee15471f576cfb30c663e18f5bc70aca577a63d2c2c03f006a7837c29a"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
@@ -24,7 +23,7 @@ class Xhost < Formula
       --enable-tcp-transport
       --enable-ipv6
       --enable-local-transport
-      --enable-secure-rpc     
+      --enable-secure-rpc
     ]
 
     system "./configure", *args
