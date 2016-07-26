@@ -1,8 +1,8 @@
 class Mesa < Formula
   desc "Mesa: cross-driver middleware"
   homepage "http://dri.freedesktop.org"
-  url "ftp://ftp.freedesktop.org/pub/mesa/11.2.2/mesa-11.2.2.tar.xz"
-  sha256 "40e148812388ec7c6d7b6657d5a16e2e8dabba8b97ddfceea5197947647bdfb4"
+  url "ftp://ftp.freedesktop.org/pub/mesa/12.0.1/mesa-12.0.1.tar.xz"
+  sha256 "bab24fb79f78c876073527f515ed871fc9c81d816f66c8a0b051d8d653896389"
 
   option "without-test", "Skip compile-time tests"
   option "with-static",   "Build static libraries (not recommended)"
@@ -46,7 +46,7 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-11.2.2-add_xdemos-1.patch"
+    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-12.0.1-add_xdemos-1.patch"
     sha256 "53492ca476e3df2de210f749983e17de4bec026a904db826acbcbd1ef83e71cd"
   end
 
