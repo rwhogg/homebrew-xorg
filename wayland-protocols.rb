@@ -1,5 +1,5 @@
 class WaylandProtocols < Formula
-  desc "A protocol for a compositor to talk to its clients"
+  desc "Additional Wayland protocols"
   homepage "https://wayland.freedesktop.org"
   url "https://wayland.freedesktop.org/releases/wayland-protocols-1.5.tar.xz"
   sha256 "7d0b426ccaeafc084fc579bb2a139f8ad4ea3492d54b7b0210d124c61fbeb2bf"
