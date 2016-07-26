@@ -24,7 +24,7 @@ class Mesa < Formula
   depends_on "libdrm"
   depends_on "systemd"
   depends_on "llvm"
-  depends_on "libelf" #?
+  depends_on "libelf" # ?
   depends_on "libomxil-bellagio"
   depends_on "wayland" => :recommended # => HEAD is preferred
 
@@ -38,17 +38,12 @@ class Mesa < Formula
   #
 
   depends_on "libva" => :recommended
-  depends_on "autoconf" => :build if (build.with?("libva") && !build.without?("wayland"))
+  depends_on "autoconf" => :build if build.with?("libva") && build.with?("wayland")
 
   resource "libva" do
-    url "http://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.0.tar.bz2"
+    url "https://www.freedesktop.org/software/vaapi/releases/libva/libva-1.7.0.tar.bz2"
     sha256 "a689bccbcc81a66b458e448377f108c057d3eee44a2e21a23c92c549dc8bc95f"
   end
-
-  # depends_on "util-macros" => :build
-  # depends_on "autoconf" => :build
-  # depends_on "libtool" => :build
-  # depends_on "libpciaccess" => :build
 
   patch :p1 do
     url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-11.2.2-add_xdemos-1.patch"
@@ -56,7 +51,6 @@ class Mesa < Formula
   end
 
   def install
-
     resource("mako").stage do
       system "python", *Language::Python.setup_install_args(libexec/"vendor")
     end
@@ -106,7 +100,7 @@ class Mesa < Formula
         ### Set environment flags:
         # $ pkg-config --cflags egl | tr ' ' '\n'
         # $ pkg-config --cflags gl  | tr ' ' '\n'
-        ENV["EGL_CFLAGS"] =  "-I#{include}"
+        ENV["EGL_CFLAGS"] = "-I#{include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].include}"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].include}/libdrm"
         ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].include}"
@@ -128,7 +122,6 @@ class Mesa < Formula
 
         ENV["EGL_LIBS"] = "-L#{lib} -lEGL"
         ENV["GLX_LIBS"] = "-L#{lib} -lGL"
-
 
         system "autoreconf", "-fi" if build.without?("wayland") # needed only if Wayland is not installed
         system "./configure", *args
