@@ -23,7 +23,7 @@ class Mesa < Formula
   depends_on "xorg" # TODO: figure out which packages exactly are used and depend on them only
   depends_on "libdrm"
   depends_on "systemd"
-  depends_on "llvm" => ["with-clang", "with-clang-extra-tools", "with-compiler-rt", "with-rtti", "with-shared"] # :head HAS TO BE HEAD!!!
+  depends_on "llvm"
   depends_on "libelf" #?
   depends_on "libomxil-bellagio"
   depends_on "wayland" => :recommended # => HEAD is preferred
