@@ -7,6 +7,10 @@ class Xgamma < Formula
   sha256 "0ef1c35b5c18b1b22317f455c8df13c0a471a8efad63c89c98ae3ce8c2b222d3"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "87fabdb6407145ed9e5e2329b8f3049188f07c42e3e5d52df2c964f7eac68161" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
