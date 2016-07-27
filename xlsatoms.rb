@@ -7,6 +7,11 @@ class Xlsatoms < Formula
   sha256 "47e5dc7c3dbda6db2cf8c00cedac1722835c1550aa21cfdbc9ba83906694dea4"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "acc3460e3384a144e15fef796cc49998f83509ff5bb5a448ff64cfd5c4349ede" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "libxcb"
 
