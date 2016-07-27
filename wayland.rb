@@ -1,7 +1,7 @@
 class Wayland < Formula
   desc "A protocol for a compositor to talk to its clients"
   homepage "https://wayland.freedesktop.org"
-  url "http://wayland.freedesktop.org/releases/wayland-1.11.0.tar.xz"
+  url "https://wayland.freedesktop.org/releases/wayland-1.11.0.tar.xz"
   sha256 "9540925f7928becfdf5e3b84c70757f6589bf1ceef09bea78784d8e4772c0db0"
 
   head do
