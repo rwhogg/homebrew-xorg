@@ -7,6 +7,10 @@ class Xmessage < Formula
   sha256 "bcdf4b461c439bb3ade6e1e41c47d6218b912da8e9396b7ad70856db2f95ab68"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6a38fe5a90818f80f322186e6372684893e3b7362007eee0b45015f07e295415" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libxaw"
