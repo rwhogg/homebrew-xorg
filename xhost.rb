@@ -7,6 +7,11 @@ class Xhost < Formula
   sha256 "93e619ee15471f576cfb30c663e18f5bc70aca577a63d2c2c03f006a7837c29a"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "44654e8fde19bf1d959066ee8377ba29513becfdfe330be5e12958adc0c6caba" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
