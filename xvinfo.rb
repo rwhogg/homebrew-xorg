@@ -7,6 +7,11 @@ class Xvinfo < Formula
   sha256 "9fba8b68daf53863e66d5004fa9c703fcecf69db4d151ea2d3d885d621e6e5eb"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "500a1d2d594d056a6b4b23d43278a6eeaff7a5c9c7c7c62f9ae487c3c3ed84e9" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
