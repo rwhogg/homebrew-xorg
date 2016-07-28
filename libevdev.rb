@@ -10,7 +10,7 @@ class Libevdev < Formula
 
   depends_on "pkg-config" =>  :build
   depends_on :python => :build
-  depends_on "check" if build.with?("test")
+  depends_on "check" => :build if build.with?("test")
 
   def install
     args = %W[
