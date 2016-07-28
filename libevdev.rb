@@ -5,12 +5,6 @@ class Libevdev < Formula
   sha256 "5ee2163656a61f5703cb5c08a05c9471ffb7b640bfbe2c55194ea50d908f629b"
   # tag "linuxbrew"
 
-  bottle do
-    cellar :any_skip_relocation
-    revision 1
-    sha256 "46d8b9caf99e497dcf73c77f32b073cfe6ec4d979d5e63e1ddda67176a3ff9cd" => :x86_64_linux
-  end
-
   option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
 
