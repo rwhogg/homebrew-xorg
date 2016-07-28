@@ -26,6 +26,6 @@ class Pciutils < Formula
 
   test do
     output = shell_output("#{sbin}/lspci --version").chomp
-    assert_match output, "lspci version #{version}"
+    assert_equal output, "lspci version #{version}"
   end
 end
