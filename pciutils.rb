@@ -20,6 +20,10 @@ class Pciutils < Formula
     system "make", *args, "install", "install-lib"
   end
 
+  def post_install
+    system "#{sbin}/update-pciids"
+  end
+
   test do
     output = shell_output("#{sbin}/lspci --version").chomp
     assert_match output, "lspci version #{version}"
