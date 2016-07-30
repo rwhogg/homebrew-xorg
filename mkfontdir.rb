@@ -7,6 +7,10 @@ class Mkfontdir < Formula
   sha256 "56d52a482df130484e51fd066d1b6eda7c2c02ddbc91fe6e2be1b9c4e7306530"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "b6e91d7d3264faea12876fd7aaceea3f32496298504438d83afeba812423ad10" => :x86_64_linux
+  end
 
   depends_on "pkg-config"  => :build
   depends_on "util-macros" => :build
