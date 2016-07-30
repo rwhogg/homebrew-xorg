@@ -8,6 +8,11 @@ class FontUtil < Formula
   sha256 "aa7ebdb0715106dd255082f2310dbaa2cd7e225957c2a77d719720c7cc92b921"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "47b6f86727088a0cf07b2daabe9f036fb87b01973e23cf2867f9cb52e7a5e761" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config"    =>  :build
