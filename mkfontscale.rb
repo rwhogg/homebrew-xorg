@@ -7,6 +7,11 @@ class Mkfontscale < Formula
   sha256 "8c6d5228af885477b9aec60ca6f172578e7d2de42234357af62fb00439453f20"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "fc801288a76cdad16eabb8301291be740a9e5deac05a906b4485301e73c590a6" => :x86_64_linux
+  end
+
   option "with-bzip2", "Support bzip2 compressed bitmap fonts"
 
   depends_on "pkg-config" =>  :build
