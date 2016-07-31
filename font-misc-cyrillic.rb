@@ -3,8 +3,8 @@ class FontMiscCyrillic < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-misc-cyrillic-1.0.3.tar.bz2"
   sha256 "e40fe3e3323c62b738550795457ad555c70c008aa91b5912dfd46f8e745f5e60"
   # tag "linuxbrew"
 

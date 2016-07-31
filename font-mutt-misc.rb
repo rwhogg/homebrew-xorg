@@ -3,8 +3,8 @@ class FontMuttMisc < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-mutt-misc-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-mutt-misc-1.0.3.tar.bz2"
   sha256 "bd5f7adb34367c197773a9801df5bce7b019664941900b2a31fbfe1ff2830f8f"
   # tag "linuxbrew"
 

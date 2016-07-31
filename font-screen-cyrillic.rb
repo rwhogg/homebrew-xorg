@@ -3,8 +3,8 @@ class FontScreenCyrillic < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-screen-cyrillic-1.0.4.tar.bz2"
   sha256 "824231e8dffe15299454e47259f29d98001c9cf8ad3d6b5171399e4d71705e79"
   # tag "linuxbrew"
 

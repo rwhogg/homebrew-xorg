@@ -3,8 +3,8 @@ class FontAdobeUtopiaType1 < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-adobe-utopia-type1-1.0.4.tar.bz2"
   sha256 "979435105f897a70f8993fa02c8362160b0513366c2ab896965416f96dbb8077"
   # tag "linuxbrew"
 

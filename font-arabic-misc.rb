@@ -3,8 +3,8 @@ class FontArabicMisc < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-arabic-misc-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-arabic-misc-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-arabic-misc-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-arabic-misc-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-arabic-misc-1.0.3.tar.bz2"
   sha256 "505d9b12a7093389e67a925dfda6346bde26d114c67f0cdca7aeda6e5d3344f4"
   # tag "linuxbrew"
 

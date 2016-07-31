@@ -3,8 +3,8 @@ class FontDecMisc < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-dec-misc-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-dec-misc-1.0.3.tar.bz2"
   sha256 "e19ddf8b5f8de914d81675358fdfe37762e9ce524887cc983adef34f2850ff7b"
   # tag "linuxbrew"
 

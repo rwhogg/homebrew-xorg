@@ -3,8 +3,8 @@ class FontCronyxCyrillic < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-cronyx-cyrillic-1.0.3.tar.bz2"
   sha256 "6e8631936157677c77ba032b5c7b1fb3cb2ee872dbcea0444f12cd602cd9212a"
   # tag "linuxbrew"
 
