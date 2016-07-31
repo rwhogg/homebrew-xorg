@@ -8,6 +8,10 @@ class FontBitstream75dpi < Formula
   sha256 "ba3f5e4610c07bd5859881660753ec6d75d179f26fc967aa776dbb3d5d5cf48e"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "4c90591f9bc9112cd93a121234174c51c9f12b04ff97d31741916cb1b1dbe427" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "font-util"  =>  :build
   depends_on "bdftopcf"   =>  :build
