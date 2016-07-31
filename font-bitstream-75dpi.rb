@@ -3,8 +3,8 @@ class FontBitstream75dpi < Formula
   homepage "http://www.x.org/"
   ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7font.html
   url    "https://www.x.org/pub/individual/font/font-bitstream-75dpi-1.0.3.tar.bz2"
-  mirror "http://xorg.freedesktop.org/archive/individual/font/font-bitstream-75dpi-1.0.3.tar.bz2"
-  mirror "http://ftp.x.org/archive/individual/font/font-bitstream-75dpi-1.0.3.tar.bz2"
+  mirror "https://xorg.freedesktop.org/archive/individual/font/font-bitstream-75dpi-1.0.3.tar.bz2"
+  mirror "https://ftp.x.org/archive/individual/font/font-bitstream-75dpi-1.0.3.tar.bz2"
   sha256 "ba3f5e4610c07bd5859881660753ec6d75d179f26fc967aa776dbb3d5d5cf48e"
   # tag "linuxbrew"
 
