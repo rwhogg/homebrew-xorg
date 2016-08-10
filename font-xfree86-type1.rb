@@ -6,10 +6,12 @@ class FontXfree86Type1 < Formula
   mirror "https://xorg.freedesktop.org/archive/individual/font/font-xfree86-type1-1.0.4.tar.bz2"
   mirror "https://ftp.x.org/archive/individual/font/font-xfree86-type1-1.0.4.tar.bz2"
   sha256 "caebf42aec7be7f3bd40e0f232d6f34881b853dc84acfcdf7458358701fbe34a"
+  revision 1
   # tag "linuxbrew"
 
   bottle do
-    sha256 "298bff88234021c2634c000c8fb31df0625edf7fb1f10b86c502ec4ae38228fd" => :x86_64_linux
+    revision 1
+    sha256 "9b233d97e93dda17c3ab99cad08ee76346a92baef99af21655ee5b39007f33fc" => :x86_64_linux
   end
 
   keg_only "Part of Xorg-fonts package"
