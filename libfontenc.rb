@@ -12,9 +12,9 @@ class Libfontenc < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" =>  :build
-  depends_on "xproto"     =>  :build
-  depends_on "font-util"  =>  :build
+  depends_on "pkg-config" => :build
+  depends_on "xproto" => :build
+  depends_on "font-util" => :build
   depends_on "zlib"
 
   def install
