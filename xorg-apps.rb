@@ -48,7 +48,6 @@ class XorgApps < Formula
   depends_on "xwininfo"
   depends_on "xwud"
 
-
   def install
     ohai "Xorg Applications have been installed!"
     prefix.install "README.md" => "xorg-apps.md"
