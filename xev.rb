@@ -7,6 +7,10 @@ class Xev < Formula
   sha256 "d94ae62a6c1af56c2961d71f5782076ac4116f0fa4e401420ac7e0db33dc314f"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "797f3a6ae4c84b37a60f3c2e9c1eca9128b5e9defc50209ac97dac48f4b587c1" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libxrandr"
