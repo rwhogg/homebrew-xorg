@@ -7,6 +7,10 @@ class Xinput < Formula
   sha256 "3694d29b4180952fbf13c6d4e59541310cbb11eef5bf888ff3d8b7f4e3aee5c4"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "346e245f0b0bea4836e0ad8d268e118958b374c54c2c3cd4965664355067b202" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
