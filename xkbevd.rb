@@ -7,6 +7,9 @@ class Xkbevd < Formula
   sha256 "2430a2e5302a4cb4a5530c1df8cb3721a149bbf8eb377a2898921a145197f96a"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "92d578bf17698d728a06a482156b83c2b9c342df3c4b1095f774ebd25d0b24ab" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libxkbfile"
