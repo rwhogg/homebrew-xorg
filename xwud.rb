@@ -7,6 +7,11 @@ class Xwud < Formula
   sha256 "d6b3a09ccfe750868e26bd2384900ab5ff0d434f7f40cd272a50eda8aaa1f8bd"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "daa425a235d783858b9d1e27ba1d6090105ad438714e0819afba9f011c43c55a" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
