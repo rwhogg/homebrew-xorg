@@ -5,6 +5,11 @@ class Libxxf86misc < Formula
   sha256 "358f692f793af00f6ef4c7a8566c1bcaeeea37e417337db3f519522cc1df3946"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "b93c3e0e6f73b9e19682b33f58ab6ebe836fd3918a3c6b15ec4ff7bd588c39e3" => :x86_64_linux
+  end
+
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
