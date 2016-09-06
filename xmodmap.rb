@@ -7,6 +7,11 @@ class Xmodmap < Formula
   sha256 "b7b0e5cc5f10d0fb6d2d6ea4f00c77e8ac0e847cc5a73be94cd86139ac4ac478"
   # tag "linuxbrew"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "aa467c3ef7804c0609957eaf4cb636fd394d32c1efaf142774ea40b0339f9496" => :x86_64_linux
+  end
+
   depends_on "pkg-config" =>  :build
   depends_on "xproto" => :build
   depends_on "libx11"
