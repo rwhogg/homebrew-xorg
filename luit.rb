@@ -7,6 +7,9 @@ class Luit < Formula
   sha256 "30b0e787cb07a0f504b70f1d6123930522111ce9d4276f6683a69b322b49c636"
   # tag "linuxbrew"
 
+  bottle do
+    sha256 "a715c922cbe8266de203bc7a3e4dfbbfb30a239326480208fe33d02da51a3776" => :x86_64_linux
+  end
 
   depends_on "pkg-config" =>  :build
   depends_on "libx11"     =>  :build
