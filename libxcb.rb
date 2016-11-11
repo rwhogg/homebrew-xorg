@@ -1,5 +1,5 @@
 class Libxcb < Formula
-  desc "An interface to the X Window System protocol, which replaces the current Xlib interface"
+  desc "Interface to the X Window System protocol and replacement for Xlib"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://xcb.freedesktop.org/dist/libxcb-1.11.1.tar.bz2"
   sha256 "b720fd6c7d200e5371affdb3f049cc8f88cff9aed942ff1b824d95eedbf69d30"
