@@ -7,7 +7,6 @@ class Xdriinfo < Formula
   sha256 "4cba3766ef89557422062287248adeb933999071bad6f3ef9c0a478a3c680119"
   # tag "linuxbrew"
 
-
   depends_on "pkg-config" =>  :build
   depends_on "libx11"
   depends_on "glproto"
