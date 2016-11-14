@@ -12,12 +12,10 @@ class Mkfontscale < Formula
     sha256 "fc801288a76cdad16eabb8301291be740a9e5deac05a906b4485301e73c590a6" => :x86_64_linux
   end
 
-  option "with-bzip2", "Support bzip2 compressed bitmap fonts"
-
   depends_on "pkg-config" =>  :build
   depends_on "libfontenc"
   depends_on "freetype"
-  depends_on "bzip2" if build.with?("bzip2")
+  depends_on "bzip2" => :recommended
   depends_on "xproto" => :build
 
   def install
