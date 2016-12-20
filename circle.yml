@@ -2,21 +2,21 @@ machine:
   environment:
     HOMEBREW_DEVELOPER: 1
     HOMEBREW_VERBOSE_USING_DOTS: 1
-  checkout:
-    post:
-      - git remote set-url origin https://github.com/Linuxbrew/homebrew-xorg
-      - git fetch origin
-      - git checkout master
-      - git reset --hard origin/master
-      - git config user.name LinuxbrewTestBot
-      - git config user.email testbot@linuxbrew.sh
-      - sudo mkdir /home/linuxbrew
-      - sudo chown "$USER:" /home/linuxbrew
-      - git clone --depth=1 https://github.com/Linuxbrew/brew /home/linuxbrew/.linuxbrew
-      - mkdir -p /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew
-      - mv $HOME/homebrew-xorg /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/
-      - mkdir $HOME/homebrew-xorg
-      - chmod 0644 /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/homebrew-xorg/*.rb
+checkout:
+  post:
+    - git remote set-url origin https://github.com/Linuxbrew/homebrew-xorg
+    - git fetch origin
+    - git checkout master
+    - git reset --hard origin/master
+    - git config user.name LinuxbrewTestBot
+    - git config user.email testbot@linuxbrew.sh
+    - sudo mkdir /home/linuxbrew
+    - sudo chown "$USER:" /home/linuxbrew
+    - git clone --depth=1 https://github.com/Linuxbrew/brew /home/linuxbrew/.linuxbrew
+    - mkdir -p /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew
+    - mv $HOME/homebrew-xorg /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/
+    - mkdir $HOME/homebrew-xorg
+    - chmod 0644 /home/linuxbrew/.linuxbrew/Library/Taps/linuxbrew/homebrew-xorg/*.rb
 
 dependencies:
   override:
