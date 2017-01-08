@@ -1,7 +1,7 @@
 class Libx11 < Formula
   desc "X.Org Libraries: libX11"
   homepage "http://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url    "http://ftp.x.org/pub/individual/lib/libX11-1.6.4.tar.bz2"
+  url "http://ftp.x.org/pub/individual/lib/libX11-1.6.4.tar.bz2"
   sha256 "b7c748be3aa16ec2cbd81edc847e9b6ee03f88143ab270fb59f58a044d34e441"
   # tag "linuxbrew"
 
