@@ -167,10 +167,6 @@ class Mesa < Formula
     libs = %w[
       libxcb-dri3.so.0
       libxcb-present.so.0
-      libxcb-randr.so.0
-      libxcb-xfixes.so.0
-      libxcb-render.so.0
-      libxcb-shape.so.0
       libxcb-sync.so.1
       libxshmfence.so.1
       libglapi.so.0
@@ -184,6 +180,8 @@ class Mesa < Formula
       libxcb.so.1
       libXxf86vm.so.1
       libdrm.so.2
+      libXau.so.6
+      libXdmcp.so.6
     ]
     libs << "libexpat.so.1" if build.with?("wayland")
 
