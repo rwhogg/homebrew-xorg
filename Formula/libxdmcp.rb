@@ -1,13 +1,13 @@
-class Libxmu < Formula
-  desc "X.Org Libraries: libXmu"
+class Libxdmcp < Formula
+  desc "X Display Manager Control Protocol"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXmu-1.1.2.tar.bz2"
-  sha256 "756edc7c383254eef8b4e1b733c3bf1dc061b523c9f9833ac7058378b8349d0b"
+  url "https://ftp.x.org/pub/individual/lib/libXdmcp-1.1.2.tar.bz2"
+  sha256 "81fe09867918fff258296e1e1e159f0dc639cb30d201c53519f25ab73af4e4e2"
   # tag "linuxbrew"
 
   bottle do
-    rebuild 1
-    sha256 "2b0c683b9deddbed3c238bf167b96ada9e76587f22ed0a8d28d8f87955d38e20" => :x86_64_linux
+    cellar :any
+    sha256 "b6ce973996bb3bee6493bf298605cabdebb538ff3092d97e9b98f2eeb7f24da3" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
@@ -15,15 +15,11 @@ class Libxmu < Formula
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
-
-  depends_on "linuxbrew/xorg/libxt"
-  depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/xorg-protocols" => :build
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 

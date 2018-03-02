@@ -1,33 +1,29 @@
-class Libxext < Formula
-  desc "X.Org Libraries: libXext"
+class Fontsproto < Formula
+  desc "X.Org Protocol Headers: fontsproto"
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
-  url "https://ftp.x.org/pub/individual/lib/libXext-1.3.3.tar.bz2"
-  sha256 "b518d4d332231f313371fdefac59e3776f4f0823bcb23cf7c7305bfb57b16e35"
+  url "https://www.x.org/archive/individual/proto/fontsproto-2.1.3.tar.bz2"
+  sha256 "259046b0dd9130825c4a4c479ba3591d6d0f17a33f54e294b56478729a6e5ab8"
   # tag "linuxbrew"
 
   bottle do
     cellar :any
-    sha256 "00ba831ed41f21fa1f0bbdbff41db6a6bb8c188b99f2665369aa0cbe3ec94ac1" => :x86_64_linux
+    sha256 "5d04e66c6c6e5c17731f3d732f1c093b44009dbd07b22c1b629593d1cdd497fd" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/xextproto" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   # Patch for xmlto
   patch do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/patch_configure.diff"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/patch_configure.diff"
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
   if build.with?("specs")
     depends_on "xmlto" => :build
-    depends_on "fop"     => [:build, :recommended]
+    depends_on "fop" => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
   end
@@ -42,12 +38,9 @@ class Libxext < Formula
     ]
 
     # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
     args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
-    system "make"
-    system "make", "check" if build.with?("test")
     system "make", "install"
   end
 end
