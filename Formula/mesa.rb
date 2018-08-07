@@ -3,7 +3,7 @@ class Mesa < Formula
   homepage "https://dri.freedesktop.org"
   url "https://mesa.freedesktop.org/archive/mesa-17.2.3.tar.xz"
   sha256 "a0b0ec8f7b24dd044d7ab30a8c7e6d3767521e245f88d4ed5dd93315dc56f837"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
@@ -32,7 +32,6 @@ class Mesa < Formula
 
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "systemd" # provides libudev <= needed by "gbm"
-  depends_on "linuxbrew/xorg/libsha1"
   depends_on "llvm@4" # failed with llvm@6
   depends_on "libelf" # radeonsi requires libelf when using llvm
   depends_on "linuxbrew/xorg/libomxil-bellagio"
@@ -90,7 +89,6 @@ class Mesa < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --enable-opengl
-      --with-sha1=libsha1
       --enable-llvm
       --disable-llvm-shared-libs
       --enable-shared-glapi
@@ -116,13 +114,13 @@ class Mesa < Formula
 
     if build.with? "gpu"
       args += %W[
-        --with-egl-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
+        --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
         --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
         --with-dri-drivers=i965,nouveau,radeon,r200,swrast
       ]
     else
       args += %W[
-        --with-egl-platforms=
+        --with-platforms=
         --with-gallium-drivers=swrast,swr
         --with-dri-drivers=
       ]
