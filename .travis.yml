@@ -98,7 +98,7 @@ matrix:
   fast_finish: true
 
 script:
-  - brew test-bot --bintray-org=linuxbrew --git-name=LinuxbrewTestBot --git-email=testbot@linuxbrew.sh
+  - brew style linuxbrew/xorg
 
 notifications:
   email:
