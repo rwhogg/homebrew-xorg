@@ -99,6 +99,8 @@ matrix:
 
 script:
   - brew style linuxbrew/xorg
+  - brew audit $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||')
+  - brew audit --strict $(cd $(brew --repo linuxbrew/xorg)/Formula; ls *.rb | sed 's|.rb$||') || true
 
 notifications:
   email:
