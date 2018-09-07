@@ -17,7 +17,12 @@ class WaylandProtocols < Formula
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/wayland"
+  depends_on "linuxbrew/xorg/wayland" => :build
+
+  if build.head?
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+  end
 
   def install
     args = %W[
@@ -27,6 +32,7 @@ class WaylandProtocols < Formula
       --disable-silent-rules
     ]
 
+    system "autoreconf", "-fiv" if build.head?
     system "./configure", *args
     system "make"
     system "make", "check" if build.with? "test"
