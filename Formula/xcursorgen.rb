@@ -13,6 +13,12 @@ class Xcursorgen < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/fixesproto" => :build
+  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/renderproto" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxcursor"
   depends_on "libpng"
