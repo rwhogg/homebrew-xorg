@@ -13,8 +13,9 @@ class Libfontenc < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/font-util" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "zlib"
 
   def install
