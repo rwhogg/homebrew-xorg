@@ -15,7 +15,6 @@ class Xbacklight < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libxcb"
   depends_on "linuxbrew/xorg/xcb-util"
 

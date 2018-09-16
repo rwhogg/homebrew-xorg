@@ -12,7 +12,6 @@ class Xauth < Formula
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[

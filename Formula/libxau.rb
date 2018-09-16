@@ -15,7 +15,7 @@ class Libxau < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
+  depends_on "linuxbrew/xorg/xproto"
 
   def install
     args = %W[

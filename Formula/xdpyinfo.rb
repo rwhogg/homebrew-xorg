@@ -17,7 +17,6 @@ class Xdpyinfo < Formula
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxtst"
   depends_on "linuxbrew/xorg/libxcb"
-  depends_on "linuxbrew/xorg/xproto" => :build
 
   def install
     args = %W[
