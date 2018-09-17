@@ -14,10 +14,8 @@ class Libxaw < Formula
   option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libxt"
   depends_on "linuxbrew/xorg/libxmu"
   depends_on "linuxbrew/xorg/libxpm"
@@ -28,11 +26,11 @@ class Libxaw < Formula
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("specs")
+  if build.with? "specs"
     depends_on "xmlto" => :build
-    depends_on "fop"     => [:build, :recommended]
-    depends_on "libxslt" => [:build, :recommended]
-    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
+    depends_on "lynx" => :build
+    depends_on "libxslt" => :build
+    depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
   end
 
   def install
@@ -42,15 +40,13 @@ class Libxaw < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
