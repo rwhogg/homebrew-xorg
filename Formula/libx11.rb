@@ -16,7 +16,7 @@ class Libx11 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/inputproto" => :build
-  depends_on "linuxbrew/xorg/kbproto" => :build
+  depends_on "linuxbrew/xorg/kbproto" # required in x11.pc file
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
