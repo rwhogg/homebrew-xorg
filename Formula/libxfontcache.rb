@@ -8,10 +8,8 @@ class Libxfontcache < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  # Required dependencies
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/fontcacheproto" => :build
+  depends_on "linuxbrew/xorg/fontcacheproto"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
 
@@ -22,14 +20,12 @@ class Libxfontcache < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
