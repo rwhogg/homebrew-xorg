@@ -12,6 +12,7 @@ class Fixesproto < Formula
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/xextproto"
 
   def install
     args = %W[
