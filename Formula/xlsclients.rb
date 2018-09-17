@@ -14,7 +14,6 @@ class Xlsclients < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
   depends_on "linuxbrew/xorg/libxcb"
 
   def install
