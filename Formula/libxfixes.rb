@@ -14,8 +14,7 @@ class Libxfixes < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
-  depends_on "linuxbrew/xorg/fixesproto" => :build
+  depends_on "linuxbrew/xorg/fixesproto"
   depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 
@@ -26,12 +25,12 @@ class Libxfixes < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
