@@ -16,6 +16,7 @@ class Libpciaccess < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
 
   def install
     args = %W[
@@ -29,7 +30,7 @@ class Libpciaccess < Formula
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
