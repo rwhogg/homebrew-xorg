@@ -10,19 +10,17 @@ class Libvdpau < Formula
 
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
+  option "with-docs", "Build documentation"
 
-  # Build-time
   depends_on "pkg-config" => :build
-
-  # Required
   depends_on "linuxbrew/xorg/dri2proto" => :build
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libx11"
 
-  # optional
-  depends_on "doxygen" => :optional
-  depends_on "graphviz" => :optional
-  depends_on "texlive" => :optional
+  if build.with? "docs"
+    depends_on "doxygen" => :build
+    depends_on "graphviz" => :build
+    depends_on "texlive" => :build
+  end
 
   def install
     args = %W[
@@ -30,14 +28,14 @@ class Libvdpau < Formula
       --sysconfdir=#{etc}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-documentation=#{build.with?("docs") ? "yes" : "no"}
+      --enable-dri2
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test") # X11 connection rejected because of wrong authentication
+    system "make", "check" if build.with? "test" # X11 connection rejected because of wrong authentication
     system "make", "install"
   end
 end
