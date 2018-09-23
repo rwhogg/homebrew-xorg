@@ -5,6 +5,11 @@ class Libglvnd < Formula
   sha256 "f5a74598e769d55d652c464cb6507437dac5c2d513f16c6ddf3a1bec655a1824"
   head "https://github.com/NVIDIA/libglvnd.git"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    sha256 "488e941253ffa45a85715b7d8f7386ebc1a934108898010fe2d6b4704f3d6a86" => :x86_64_linux
+  end
+
   option "without-asm", "Build without assembly"
   option "without-tls", "Build without TLS support"
   option "with-static", "Build static libraries (not recommended)"
