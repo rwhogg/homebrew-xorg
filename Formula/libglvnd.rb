@@ -14,9 +14,11 @@ class Libglvnd < Formula
   option "without-tls", "Build without TLS support"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "linuxbrew/xorg/glproto" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
+  depends_on "linuxbrew/xorg/libxext" => :build
+  depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
   depends_on "python@2" => :build
 
   if build.head?
@@ -24,10 +26,7 @@ class Libglvnd < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
-
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxext" => :build
-  depends_on "linuxbrew/xorg/glproto" => :build
 
   def install
     args = %W[
