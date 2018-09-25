@@ -10,8 +10,8 @@ class Renderproto < Formula
     sha256 "212f70f35f2826cf764f65c116f9a0a6182a460adac7389deb6e74ea8cd7f54d" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
