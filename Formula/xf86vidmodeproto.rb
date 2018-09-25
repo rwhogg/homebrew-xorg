@@ -10,8 +10,8 @@ class Xf86vidmodeproto < Formula
     sha256 "fcf020ee7ae77f134702e0ae849e7d4211e7db404431ef0a02e6076c66e753cd" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
