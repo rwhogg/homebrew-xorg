@@ -15,9 +15,9 @@ class Libxcb < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
+  depends_on "linuxbrew/xorg/xcb-proto" => :build
   depends_on "pkg-config" => :build
   depends_on "python" => :build
-  depends_on "linuxbrew/xorg/xcb-proto" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" # xcb.pc references pthread-stubs
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/libxdmcp"
