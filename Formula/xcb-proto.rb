@@ -14,10 +14,10 @@ class XcbProto < Formula
   option "without-test", "Skip compile-time tests"
   option "with-python@2", "Build with Python 2"
 
-  depends_on "pkg-config" => :build
   depends_on "libxml2" => :build if build.with? "test"
-  depends_on "python@2" => [:build, :optional]
+  depends_on "pkg-config" => :build
   depends_on "python" => :build if build.without? "python@2"
+  depends_on "python@2" => [:build, :optional]
 
   def install
     args = %W[
