@@ -10,8 +10,8 @@ class Xineramaproto < Formula
     sha256 "42b4c1562aa8cfa5fc8ed49a2226bac13eb01c1b25d00e147870b342dea99ff2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
