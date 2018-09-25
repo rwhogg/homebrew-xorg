@@ -14,13 +14,13 @@ class Libx11 < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs", "Build specifications"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/inputproto" => :build
-  depends_on "linuxbrew/xorg/kbproto" # required in x11.pc file
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/xf86bigfontproto" => :build
   depends_on "linuxbrew/xorg/xtrans" => :build
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/kbproto" # required in x11.pc file
   depends_on "linuxbrew/xorg/libxcb"
 
   if build.with? "specs"
