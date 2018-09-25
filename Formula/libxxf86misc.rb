@@ -14,11 +14,11 @@ class Libxxf86misc < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xf86miscproto"
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/xf86miscproto"
 
   def install
     args = %W[
