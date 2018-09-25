@@ -10,8 +10,8 @@ class Videoproto < Formula
     sha256 "131b8b6037c14e9f384bf80f004009b2b85df8ba6f75b66996cf5b012b17d4bf" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
