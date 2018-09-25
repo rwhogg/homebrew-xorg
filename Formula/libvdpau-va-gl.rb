@@ -7,10 +7,10 @@ class LibvdpauVaGl < Formula
   # option "without-test", "Skip compile-time tests"
 
   # Build-time
-  depends_on "pkg-config" => :build
   depends_on "cmake" => :build
+  depends_on "ffmpeg" => :build
   depends_on "glib" => :build
-  depends_on "ffmpeg" => :build # libswscale
+  depends_on "pkg-config" => :build # libswscale
 
   # Required
   depends_on "linuxbrew/xorg/glu"
