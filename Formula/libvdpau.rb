@@ -12,8 +12,8 @@ class Libvdpau < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/dri2proto" => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxext"
 
   if build.with? "docs"
