@@ -20,11 +20,11 @@ class Libva < Formula
   # Step #2 can be invoked manually here by specifying `with-eglx`
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/wayland"
   depends_on "linuxbrew/xorg/libdrm"
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxfixes"
+  depends_on "linuxbrew/xorg/wayland"
 
   def install
     args = %W[
