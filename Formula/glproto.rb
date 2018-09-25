@@ -10,8 +10,8 @@ class Glproto < Formula
     sha256 "ca1b0d27122bae1fd580bf9d46bfb7b925438c5e95ffb834c78bc9cb27d64904" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
