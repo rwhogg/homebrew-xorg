@@ -13,9 +13,9 @@ class Libxfixes < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
+  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/fixesproto"
-  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install
