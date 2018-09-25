@@ -14,8 +14,8 @@ class LibomxilBellagio < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
-  depends_on "pkg-config" => :build
   depends_on "doxygen" => :build if build.with? "docs"
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
