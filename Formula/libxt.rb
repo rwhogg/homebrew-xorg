@@ -15,10 +15,12 @@ class Libxt < Formula
   option "with-specs", "Build specifications"
   option "with-glib", "Build with glib (for unit testing)"
 
+  if build.with?("glib")
+    depends_on "glib" => :build
+  end
   depends_on "pkg-config" => :build
-
-  depends_on "linuxbrew/xorg/libsm"
   depends_on "linuxbrew/xorg/libice"
+  depends_on "linuxbrew/xorg/libsm"
   depends_on "linuxbrew/xorg/libx11"
 
   # Patch for xmlto
@@ -33,10 +35,6 @@ class Libxt < Formula
     depends_on "libxslt" => [:build, :recommended]
     depends_on "perl"    => [:build, :optional]
     depends_on "linuxbrew/xorg/xorg-sgml-doctools" => [:build, :recommended]
-  end
-
-  if build.with?("glib")
-    depends_on "glib" => :build
   end
 
   def install
