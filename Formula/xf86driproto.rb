@@ -10,8 +10,8 @@ class Xf86driproto < Formula
     sha256 "add3e319e6aa797042f7b8eb8ca39b9213fdc642330769cd80f1656b007be6fa" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
