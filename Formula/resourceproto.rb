@@ -10,8 +10,8 @@ class Resourceproto < Formula
     sha256 "86232aafd92fda6c30e16b16cf03b17df6178495d13ce31baf47f4ec381e2630" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
