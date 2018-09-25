@@ -14,12 +14,10 @@ class Libxrandr < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/randrproto" => :build
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/renderproto" => :build
-
+  depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxrender"
+  depends_on "linuxbrew/xorg/randrproto"
 
   def install
     args = %W[
@@ -28,12 +26,12 @@ class Libxrandr < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
