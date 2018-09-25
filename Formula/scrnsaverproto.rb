@@ -12,8 +12,8 @@ class Scrnsaverproto < Formula
 
   option "with-specs", "Build specifications"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   # Patch for xmlto
   patch do
@@ -35,10 +35,8 @@ class Scrnsaverproto < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make", "install"
