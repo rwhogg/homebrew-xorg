@@ -10,8 +10,8 @@ class Xf86bigfontproto < Formula
     sha256 "af0d2b1eedf5ed2a360b8c2b5dfa9d5eed671d178244e7a20fabb3f317cc437a" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
