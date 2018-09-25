@@ -16,9 +16,9 @@ class Libxaw < Formula
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
-  depends_on "linuxbrew/xorg/libxt"
   depends_on "linuxbrew/xorg/libxmu"
   depends_on "linuxbrew/xorg/libxpm"
+  depends_on "linuxbrew/xorg/libxt"
 
   # Patch for xmlto
   patch do
