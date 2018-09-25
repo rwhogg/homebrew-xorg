@@ -12,15 +12,14 @@ class Libdrm < Formula
   option "without-test", "Skip compile-time tests"
   option "with-static", "Build static libraries (not recommended)"
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libpciaccess"
-  depends_on "cunit" => :build if build.with? "test"
   depends_on "cairo" => :build if build.with? "test"
-  depends_on "valgrind" => [:build, :optional]
-
-  depends_on "libxslt" => :build
+  depends_on "cunit" => :build if build.with? "test"
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
+  depends_on "libxslt" => :build
+  depends_on "pkg-config" => :build
+  depends_on "valgrind" => [:build, :optional]
+  depends_on "linuxbrew/xorg/libpciaccess"
 
   def install
     args = %W[
