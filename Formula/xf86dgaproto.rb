@@ -10,8 +10,8 @@ class Xf86dgaproto < Formula
     sha256 "99c0abed1c8a54c5cf3e8a6048c9116f0f5450ee56b13cd617fb04569f8b8613" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
