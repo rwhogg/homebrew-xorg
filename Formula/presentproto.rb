@@ -11,8 +11,8 @@ class Presentproto < Formula
     sha256 "b4b4ed865313ccc6bad7fc0b4ed7b3259c9ff72fdc301637d3c60a806ce6443b" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
