@@ -19,6 +19,7 @@ class FontBhType1 < Formula
   depends_on "linuxbrew/xorg/font-util" => :build
   depends_on "linuxbrew/xorg/bdftopcf" => :build
   depends_on "linuxbrew/xorg/mkfontdir" => :build
+  depends_on "linuxbrew/xorg/mkfontscale" => :build
   depends_on "fontconfig" => :build
 
   def install
