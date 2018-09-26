@@ -13,12 +13,13 @@ class FontArabicMisc < Formula
     sha256 "150690eeea069e7edddb42eab16d73d3340bcfb6503787eda47d7a3e459edd10" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
-  depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/mkfontdir" => :build
-  depends_on "fontconfig" => :build
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "fontconfig" => :build
+  depends_on "linuxbrew/xorg/bdftopcf" => :build
+  depends_on "linuxbrew/xorg/font-util" => :build
+  depends_on "linuxbrew/xorg/mkfontdir" => :build
+  depends_on "linuxbrew/xorg/mkfontscale" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
@@ -29,7 +30,7 @@ class FontArabicMisc < Formula
       --disable-silent-rules
       --with-fontrootdir=#{share}/fonts/X11
     ]
-    args << "--with-compression=bzip2" if build.with?("bzip2")
+    args << "--with-compression=bzip2" if build.with? "bzip2"
 
     system "./configure", *args
     system "make"
