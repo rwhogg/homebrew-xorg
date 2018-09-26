@@ -13,12 +13,13 @@ class FontWinitzkiCyrillic < Formula
     sha256 "59c5fc648ee887898636805abd19f38d3662837c1921a646ec63a6e7201f43e2" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/font-util" => :build
-  depends_on "linuxbrew/xorg/bdftopcf" => :build
-  depends_on "linuxbrew/xorg/mkfontdir" => :build
-  depends_on "fontconfig" => :build
   depends_on "bzip2" => [:build, :recommended]
+  depends_on "fontconfig" => :build
+  depends_on "linuxbrew/xorg/bdftopcf" => :build
+  depends_on "linuxbrew/xorg/font-util" => :build
+  depends_on "linuxbrew/xorg/mkfontdir" => :build
+  depends_on "linuxbrew/xorg/mkfontscale" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
@@ -29,7 +30,7 @@ class FontWinitzkiCyrillic < Formula
       --disable-silent-rules
       --with-fontrootdir=#{share}/fonts/X11
     ]
-    args << "--with-compression=bzip2" if build.with?("bzip2")
+    args << "--with-compression=bzip2" if build.with? "bzip2"
 
     system "./configure", *args
     system "make"
