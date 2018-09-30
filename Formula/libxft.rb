@@ -17,10 +17,10 @@ class Libxft < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "bzip2" if build.with?("brewed-bzip2")
+  depends_on "bzip2" if build.with? "brewed-bzip2"
   depends_on "fontconfig"
   depends_on "linuxbrew/xorg/libxrender"
-  depends_on "zlib" if build.with?("brewed-zlib")
+  depends_on "zlib" if build.with? "brewed-zlib"
 
   def install
     args = %W[
@@ -29,12 +29,12 @@ class Libxft < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
