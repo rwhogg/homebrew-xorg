@@ -15,9 +15,7 @@ class Libxt < Formula
   option "with-specs", "Build specifications"
   option "with-glib", "Build with glib (for unit testing)"
 
-  if build.with?("glib")
-    depends_on "glib" => :build
-  end
+  depends_on "glib" => [:build, :optional]
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libice"
   depends_on "linuxbrew/xorg/libsm"
@@ -29,7 +27,7 @@ class Libxt < Formula
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("specs")
+  if build.with? "specs"
     depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
@@ -45,15 +43,13 @@ class Libxt < Formula
       --with-appdefaultdir=#{etc}/X11/app-defaults
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
