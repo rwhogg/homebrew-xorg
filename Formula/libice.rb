@@ -40,16 +40,14 @@ class Libice < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-static=#{build.with?("static") ? "yes" : "no"}
+      --enable-docs=#{build.with?("docs") ? "yes" : "no"}
+      --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
-    args << "--enable-specs=#{build.with?("specs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"
-    system "make", "check" if build.with?("test")
+    system "make", "check" if build.with? "test"
     system "make", "install"
   end
 end
