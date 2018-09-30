@@ -12,6 +12,7 @@ class Xtrans < Formula
 
   option "with-docs", "Build documentation"
 
+  depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
 
   # Patch for xmlto
@@ -20,7 +21,7 @@ class Xtrans < Formula
     sha256 "e3aff4be9c8a992fbcbd73fa9ea6202691dd0647f73d1974ace537f3795ba15f"
   end
 
-  if build.with?("docs")
+  if build.with? "docs"
     depends_on "xmlto" => :build
     depends_on "fop"     => [:build, :recommended]
     depends_on "libxslt" => [:build, :recommended]
@@ -34,10 +35,8 @@ class Xtrans < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
+      --enable-docs=#{build.with?("docs") ? "yes" : "no"}
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-docs=#{build.with?("docs") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make", "install"
