@@ -14,7 +14,7 @@ class Libxxf86vm < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/xf86vidmodeproto" => :build
+  depends_on "linuxbrew/xorg/xf86vidmodeproto"
   depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
