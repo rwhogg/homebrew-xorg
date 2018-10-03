@@ -14,8 +14,8 @@ class Libxdmcp < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/xproto"
 
   # Patch for xmlto
   patch do
