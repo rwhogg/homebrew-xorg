@@ -15,14 +15,14 @@ class Libxfont < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
-  depends_on "linuxbrew/xorg/fontsproto" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "linuxbrew/xorg/xtrans" => :build
   depends_on "pkg-config" => :build
   depends_on "bzip2"
   depends_on "freetype"
+  depends_on "linuxbrew/xorg/fontsproto"
   depends_on "linuxbrew/xorg/libfontenc"
+  depends_on "linuxbrew/xorg/xproto"
   depends_on "zlib"
 
   if build.with? "devel-docs"
