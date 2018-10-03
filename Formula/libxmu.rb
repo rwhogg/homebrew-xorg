@@ -14,9 +14,7 @@ class Libxmu < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
-  depends_on "linuxbrew/xorg/xextproto" => :build
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libx11"
   depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libxt"
 
