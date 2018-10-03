@@ -15,8 +15,6 @@ class Libxi < Formula
   option "with-docs", "Build documentation"
   option "with-specs", "Build specifications"
 
-  depends_on "linuxbrew/xorg/xextproto" => :build
-  depends_on "linuxbrew/xorg/xproto" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/inputproto"
   depends_on "linuxbrew/xorg/libx11"
