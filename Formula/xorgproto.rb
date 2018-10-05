@@ -5,6 +5,12 @@ class Xorgproto < Formula
   sha256 "fee885e0512899ea5280c593fdb2735beb1693ad170c22ebcc844470eec415a0"
   head "git://anongit.freedesktop.org/git/xorg/proto/xorgproto"
 
+	bottle do
+		root_url "https://linuxbrew.bintray.com/bottles-xorg"
+		cellar :any_skip_relocation
+		sha256 "92ad849e710e96bb03cfb276e72ef74aab92291045bf487ec2d1e376d160363c" => :x86_64_linux
+	end
+
   if build.head?
     depends_on "autoconf" => :build
     depends_on "automake" => :build
