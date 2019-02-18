@@ -8,7 +8,7 @@ class Libevdev < Formula
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "06cfd318090727d4bfbdcb6dac0835b4e1550a310117df2b95ae937f26280735" => :x86_64_linux
+    sha256 "790c0ac8c90222c7a3985e0ad633a60cb7dba09430e61a479b7f0bab91fd842a" => :x86_64_linux
   end
 
   option "with-static", "Build static libraries (not recommended)"
