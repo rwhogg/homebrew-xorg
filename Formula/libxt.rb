@@ -14,7 +14,7 @@ class Libxt < Formula
   option "with-static", "Build static libraries (not recommended)"
   option "with-specs", "Build specifications"
 
-  depends_on "glib" => :build if build.with "test"
+  depends_on "glib" => :build if build.with? "test"
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libice"
   depends_on "linuxbrew/xorg/libsm"
