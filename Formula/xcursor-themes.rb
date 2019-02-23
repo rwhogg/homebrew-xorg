@@ -14,9 +14,9 @@ class XcursorThemes < Formula
     sha256 "aff195169736624a1f847c7689323a09d71e9ab9d491c8c88e449a78df6101dc" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xcursorgen" => :build
+  depends_on "pkg-config" => :build
 
   def install
     args = %W[
