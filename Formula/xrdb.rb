@@ -12,8 +12,8 @@ class Xrdb < Formula
     sha256 "a4fdfc3af56a2d0ba90dc60458de4fe296dc296ec000214165203d41990dad4a" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxmu"
 
   def install
