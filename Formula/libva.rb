@@ -6,7 +6,8 @@ class Libva < Formula
 
   bottle do
     root_url "https://linuxbrew.bintray.com/bottles-xorg"
-    sha256 "1457ad5efd5f70be88ff5ccabc2aaf9c937bae34426137eee83e03f8e670b42a" => :x86_64_linux
+    cellar :any_skip_relocation
+    sha256 "34eae84cc60a252e461cd45bbeb421dd97a6ef9e45f4bdd6062d73cde03eb773" => :x86_64_linux
   end
 
   option "with-static", "Build static libraries (not recommended)"
