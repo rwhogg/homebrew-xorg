@@ -6,8 +6,9 @@ class Libxau < Formula
   # tag "linuxbrew"
 
   bottle do
-    cellar :any
-    sha256 "d1582ba4746a6b2c326bf25abb627c80b1302d17ee08158eabf3f2e6205b2ec4" => :x86_64_linux
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    sha256 "bd260bed706b2492da210eaab8fcd2192baf3c24403267967a28e9ae35d6f518" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
