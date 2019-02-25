@@ -6,6 +6,12 @@ class Xtrans < Formula
   revision 1
   # tag "linuxbrew"
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    sha256 "29360e66e2d2e52673460ad6aecafd96128e5450045237a1e833f9571fce783d" => :x86_64_linux
+  end
+
   option "with-docs", "Build documentation"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
