@@ -17,16 +17,16 @@ class XorgDocs < Formula
   option "without-specs", "Do not build specifications"
   option "without-test", "Skip compile-time testsation"
 
-  depends_on :java => :build
-  depends_on "pkg-config" => :build
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "fop" => :build
+  depends_on :java => :build
   depends_on "libxslt" => :build
-  depends_on "lynx" => :build # required for xmlto to work correctly
-  depends_on "xmlto" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "linuxbrew/xorg/xorg-sgml-doctools" => :build
+  depends_on "lynx" => :build
+  depends_on "pkg-config" => :build # required for xmlto to work correctly
+  depends_on "xmlto" => :build
 
   # Patch for xmlto
   patch do
