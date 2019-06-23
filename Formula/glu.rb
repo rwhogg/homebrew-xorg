@@ -12,8 +12,8 @@ class Glu < Formula
   option "with-static", "Build static libraries (not recommended)"
 
   # Build-time
-  depends_on "pkg-config" => :build
   depends_on "libtool" => :build
+  depends_on "pkg-config" => :build
 
   # Required
   depends_on "linuxbrew/xorg/mesa"
