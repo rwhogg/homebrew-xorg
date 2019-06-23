@@ -12,8 +12,8 @@ class Xkbevd < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxkbfile"
   depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxkbfile"
 
   def install
     args = %W[
