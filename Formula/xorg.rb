@@ -24,42 +24,42 @@ class Xorg < Formula
   # Frequently Used Option
   args_check_static = [args_check, args_static].reject(&:empty?)
 
-  depends_on "linuxbrew/xorg/xtrans" => [args_docs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libx11" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libxext" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libdmx" => args_check_static
+  depends_on "linuxbrew/xorg/libfontenc" => args_check_static
   depends_on "linuxbrew/xorg/libfs" => args_check_static
   depends_on "linuxbrew/xorg/libice" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libpciaccess" => args_check_static
+  depends_on "linuxbrew/xorg/libpthread-stubs"
   depends_on "linuxbrew/xorg/libsm" => [args_check, args_static, args_docs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libxscrnsaver" => args_check_static
-  depends_on "linuxbrew/xorg/libxt" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libxmu" => [args_check, args_static, args_docs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libxpm" => args_check_static
+  depends_on "linuxbrew/xorg/libx11" => [args_check, args_static, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxaw" => [args_check, args_static, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxaw3d" => [args_check, args_static, args_specs].reject(&:empty?)
-  depends_on "linuxbrew/xorg/libxfixes" => args_check_static
   depends_on "linuxbrew/xorg/libxcomposite" => args_check_static
-  depends_on "linuxbrew/xorg/libxrender" => args_check_static
   depends_on "linuxbrew/xorg/libxcursor" => args_check_static
   depends_on "linuxbrew/xorg/libxdamage" => args_check_static
-  depends_on "linuxbrew/xorg/libfontenc" => args_check_static
+  depends_on "linuxbrew/xorg/libxext" => [args_check, args_static, args_specs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxfixes" => args_check_static
   depends_on "linuxbrew/xorg/libxfont" => [args_check, args_static, args_devel_docs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxft" => args_check_static
   depends_on "linuxbrew/xorg/libxi" => [args_check, args_static, args_docs, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxinerama" => args_check_static
+  depends_on "linuxbrew/xorg/libxkbfile" => args_check_static
+  depends_on "linuxbrew/xorg/libxmu" => [args_check, args_static, args_docs].reject(&:empty?)
+  depends_on "linuxbrew/xorg/libxpm" => args_check_static
   depends_on "linuxbrew/xorg/libxrandr" => args_check_static
+  depends_on "linuxbrew/xorg/libxrender" => args_check_static
   depends_on "linuxbrew/xorg/libxres" => args_check_static
+  depends_on "linuxbrew/xorg/libxscrnsaver" => args_check_static
+  depends_on "linuxbrew/xorg/libxshmfence" => args_check_static
+  depends_on "linuxbrew/xorg/libxt" => [args_check, args_static, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxtst" => [args_check, args_static, args_specs].reject(&:empty?)
   depends_on "linuxbrew/xorg/libxv" => args_check_static
   depends_on "linuxbrew/xorg/libxvmc" => args_check_static
   depends_on "linuxbrew/xorg/libxxf86dga" => args_check_static
   depends_on "linuxbrew/xorg/libxxf86vm" => args_check_static
-  depends_on "linuxbrew/xorg/libdmx" => args_check_static
-  depends_on "linuxbrew/xorg/libpciaccess" => args_check_static
-  depends_on "linuxbrew/xorg/libxkbfile" => args_check_static
-  depends_on "linuxbrew/xorg/libxshmfence" => args_check_static
   depends_on "linuxbrew/xorg/xdpyinfo" => args_check_static
+  depends_on "linuxbrew/xorg/xtrans" => [args_docs].reject(&:empty?)
   # libpthread-stubs is needed by a lot of formulae at build time (pango, cairo, ...)
-  depends_on "linuxbrew/xorg/libpthread-stubs"
 
   if build.with?("docs") # or build.with?("specs")
     depends_on "linuxbrew/xorg/xorg-docs" => :recommended
