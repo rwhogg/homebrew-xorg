@@ -13,10 +13,10 @@ class Xdpyinfo < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "linuxbrew/xorg/libxext"
   depends_on "linuxbrew/xorg/libx11"
-  depends_on "linuxbrew/xorg/libxtst"
   depends_on "linuxbrew/xorg/libxcb"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxtst"
 
   def install
     args = %W[
