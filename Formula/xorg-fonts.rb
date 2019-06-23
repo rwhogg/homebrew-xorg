@@ -9,7 +9,6 @@ class XorgFonts < Formula
 
   bottle :unneeded
 
-  depends_on "linuxbrew/xorg/font-util"
   depends_on "linuxbrew/xorg/encodings"
   depends_on "linuxbrew/xorg/font-adobe-100dpi"
   depends_on "linuxbrew/xorg/font-adobe-75dpi"
@@ -44,6 +43,7 @@ class XorgFonts < Formula
   depends_on "linuxbrew/xorg/font-screen-cyrillic"
   depends_on "linuxbrew/xorg/font-sony-misc"
   depends_on "linuxbrew/xorg/font-sun-misc"
+  depends_on "linuxbrew/xorg/font-util"
   depends_on "linuxbrew/xorg/font-winitzki-cyrillic"
   depends_on "linuxbrew/xorg/font-xfree86-type1"
 
