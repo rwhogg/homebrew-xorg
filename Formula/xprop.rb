@@ -13,8 +13,8 @@ class Xprop < Formula
     sha256 "d738417aceb53aa760fbaa6667289aa1d3a473ad4498f2b680dc28dde11b0eac" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
 
   def install
