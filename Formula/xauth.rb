@@ -13,8 +13,8 @@ class Xauth < Formula
 
   # tag "linuxbrew"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxmu" # brings in libxext, libx11, libxau
 
   def install
