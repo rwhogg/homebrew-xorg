@@ -13,10 +13,10 @@ class Xset < Formula
 
   # tag "linuxbrew"
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
-  depends_on "linuxbrew/xorg/libxmu"
-  depends_on "linuxbrew/xorg/libxfontcache" # brings in dep on libxext and libx11
+  depends_on "pkg-config" => :build
+  depends_on "linuxbrew/xorg/libxfontcache"
+  depends_on "linuxbrew/xorg/libxmu" # brings in dep on libxext and libx11
   depends_on "linuxbrew/xorg/libxxf86misc"
 
   def install
