@@ -13,8 +13,8 @@ class Xkill < Formula
     sha256 "1d8111e12d4d90df8f9a32011ac8a0dcf8f272686f2a7029ce6f09095d3a0de5" => :x86_64_linux
   end
 
-  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/util-macros" => :build
+  depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxmu" # brings in libx11
 
   def install
