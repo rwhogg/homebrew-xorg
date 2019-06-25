@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: linuxbrew/linuxbrew
+      - image: linuxbrew/brew
     environment:
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_ANALYTICS: 1
@@ -21,9 +21,9 @@ jobs:
             git config --global user.name LinuxbrewTestBot
             git config --global user.email testbot@linuxbrew.sh
       - run:
-          name: Unshallow Linuxbrew/brew
+          name: Fetch Linuxbrew/brew
           working_directory: /home/linuxbrew/.linuxbrew/Homebrew
-          command: git fetch origin --unshallow --tags
+          command: git fetch origin --tags
       - run:
           name: Update Linuxbrew
           command: brew update
