@@ -7,9 +7,8 @@ class Mkfontscale < Formula
   # tag "linuxbrew"
 
   bottle do
-    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "36cc314dc5775411b3868f930cbbb7f21d297562c10aba75edf8c381b54e90d3" => :x86_64_linux
+    sha256 "895415a5b7edc441ba8d8fc51dc4ac3e51d3e077d8dc59befe199b6db0cfc15a" => :x86_64_linux
   end
 
   depends_on "linuxbrew/xorg/xorgproto" => :build
