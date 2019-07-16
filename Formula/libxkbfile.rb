@@ -7,7 +7,7 @@ class Libxkbfile < Formula
 
   bottle do
     cellar :any
-    sha256 "298c6f3d05f92b0b4bc0aebe9c91fede70d5535841114e74a27b835d06dffce5" => :x86_64_linux
+    sha256 "1e943ae60d762337e4b9f2b989e58bed91856640f5b2facbb31b5e9560f59b1d" => :x86_64_linux
   end
 
   option "without-test", "Skip compile-time tests"
