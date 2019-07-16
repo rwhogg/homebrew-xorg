@@ -10,6 +10,7 @@
   "glproto": "xorgproto",
   "inputproto": "xorgproto",
   "kbproto": "xorgproto",
+  "mkfontdir": "mkfontscale",
   "presentproto": "xorgproto",
   "randrproto": "xorgproto",
   "recordproto": "xorgproto",
