@@ -1,181 +1,116 @@
 class Mesa < Formula
+  include Language::Python::Virtualenv
   desc "Cross-driver middleware"
   homepage "https://dri.freedesktop.org"
-  url "https://mesa.freedesktop.org/archive/mesa-19.0.6.tar.xz"
-  sha256 "2db2f2fcaa4048b16e066fad76b8a93944f7d06d329972b0f5fd5ce692ce3d24"
+  url "https://mesa.freedesktop.org/archive/mesa-19.1.6.tar.xz"
+  sha256 "2a369b7b48545c6486e7e44913ad022daca097c8bd937bf30dcf3f17a94d3496"
   head "https://gitlab.freedesktop.org/mesa/mesa.git"
 
   bottle do
     sha256 "36731aa03379dd53735bdd58bd5c53e1f1fbec26b4f020f215bf8a4ec0428507" => :x86_64_linux
   end
 
-  option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "without-gpu", "Build without graphics hardware"
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "bison" => :build
   depends_on "flex" => :build
-  depends_on "libtool" => :build
-  depends_on "linuxbrew/xorg/libpthread-stubs" => :build
-  depends_on "linuxbrew/xorg/libvdpau" => :build
-  depends_on "linuxbrew/xorg/libxrandr" => :build
-  depends_on "linuxbrew/xorg/wayland-protocols" => [:recommended, :build]
-  depends_on "linuxbrew/xorg/xorgproto" => :build
+  depends_on "gettext" => :build
   depends_on "llvm@7" => :build
+  depends_on "meson-internal" => :build
+  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@2" => :build
-  depends_on "libelf"
-  depends_on "linuxbrew/xorg/libdrm"
-  depends_on "linuxbrew/xorg/libomxil-bellagio"
-  depends_on "linuxbrew/xorg/libxdamage"
-  depends_on "linuxbrew/xorg/libxshmfence"
-  depends_on "linuxbrew/xorg/libxv"
-  depends_on "linuxbrew/xorg/libxvmc"
-  depends_on "linuxbrew/xorg/libxxf86vm"
-  depends_on "systemd" # provides libudev <= needed by "gbm" # failed with llvm@6 # radeonsi requires libelf when using llvm
-  depends_on "linuxbrew/xorg/libva" => :recommended
-  depends_on "valgrind" => :recommended
-  depends_on "linuxbrew/xorg/libglvnd" => :optional
+  depends_on "python" => :build
 
-  #
-  # There is a circular dependency between Mesa and libva:
-  # libva should be installed:
-  #  1. before Mesa with "disable-egl" and "disable-egl" options  [libva formula]
-  #  2. after  Mesa without the above two options                 [this formula]
-  #
+  depends_on "expat" # Indirect linkage
+  depends_on "libelf" # Indirect linkage
+  depends_on "linuxbrew/xorg/libdrm"
+  depends_on "linuxbrew/xorg/libomxil-bellagio" # Optional
+  depends_on "linuxbrew/xorg/libva-internal" # Optional
+  depends_on "linuxbrew/xorg/libvdpau" # Optional. No linkage
+  depends_on "linuxbrew/xorg/libx11"
+  depends_on "linuxbrew/xorg/libxcb" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxdamage"
+  depends_on "linuxbrew/xorg/libxext"
+  depends_on "linuxbrew/xorg/libxfixes" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxrandr" # No linkage
+  depends_on "linuxbrew/xorg/libxshmfence"
+  depends_on "linuxbrew/xorg/libxv" # Indirect linkage
+  depends_on "linuxbrew/xorg/libxvmc" # Optional
+  depends_on "linuxbrew/xorg/libxxf86vm"
+  depends_on "linuxbrew/xorg/wayland"
+  depends_on "linuxbrew/xorg/wayland-protocols" # No linkage
+  depends_on "lm-sensors" # Optional
+  depends_on "ncurses" # Indirect linkage
+  depends_on "zlib" # Indirect linkage
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/f9/93/63f78c552e4397549499169198698de23b559b52e57f27d967690811d16d/Mako-1.0.10.tar.gz"
-    sha256 "7165919e78e1feb68b4dbe829871ea9941398178fa58e6beedb9ba14acf63965"
+    url "https://files.pythonhosted.org/packages/b0/3c/8dcd6883d009f7cae0f3157fb53e9afb05a0d3d33b3db1268ec2e6f4a56b/Mako-1.1.0.tar.gz"
+    sha256 "a36919599a9b7dc5d86a7a8988f23a9a3a3d083070023bab23d64f7f1d1e0a4b"
   end
 
   resource "libva" do
-    url "https://github.com/intel/libva/releases/download/2.4.0/libva-2.4.0.tar.bz2"
-    sha256 "99263056c21593a26f2ece812aee6fe60142b49e6cd46cb33c8dddf18fc19391"
+    url "https://github.com/intel/libva/releases/download/2.5.0/libva-2.5.0.tar.bz2"
+    sha256 "3aa89cd369a506ac4dbe5de7c0ef5da4f3d220bf986403f02fa1f6f702af6878"
   end
 
   patch :p1 do
-    url "https://gist.githubusercontent.com/rwhogg/088a3e771be0f0556d2286c034544d18/raw/efd587120964745a61a2571a431ffc38341dc37c/mesa-patch-from-linux-from-scratch.patch"
-    sha256 "53492ca476e3df2de210f749983e17de4bec026a904db826acbcbd1ef83e71cd"
+    url "www.linuxfromscratch.org/patches/blfs/svn/mesa-19.1.6-add_xdemos-1.patch"
+    sha256 "ffa885d37557feaacabd5852d5aa8d17e15eb6a41456bb6f9525d52a96e86601"
   end
 
   def install
     # Reduce memory usage below 4 GB for Circle CI.
     ENV["MAKEFLAGS"] = "-j2" if ENV["CIRCLECI"]
 
-    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python2.7/site-packages"
+    ENV.prepend_create_path "PYTHONPATH", libexec/"vendor/lib/python3.7/site-packages"
 
     resource("mako").stage do
-      system "python", *Language::Python.setup_install_args(libexec/"vendor")
+      system "python3", *Language::Python.setup_install_args(libexec/"vendor")
     end
 
-    gpu = build.with?("gpu") ? "yes" : "no"
-    nogpu = build.with?("gpu") ? "no" : "yes"
+    if build.with?("gpu")
+      gpu = "true"
+      platforms = %w[x11 wayland drm surfaceless].join(",")
+      dri_drivers = "auto"
+      gallium_drivers = "auto"
+      glx="auto"
+    else
+      gpu = "false"
+      platforms = ""
+      dri_drivers = ""
+      gallium_drivers = ""
+      glx="disabled"
+    end
 
     args = %W[
-      CFLAGS=#{ENV.cflags}
-      CXXFLAGS=#{ENV.cflags}
-      --enable-autotools
-      --disable-silent-rules
-      --disable-dependency-tracking
-      --prefix=#{prefix}
-      --sysconfdir=#{etc}
-      --localstatedir=#{var}
-      --enable-opengl
-      --enable-llvm
-      --disable-llvm-shared-libs
-      --enable-shared-glapi
-      --with-llvm-prefix=#{Formula["llvm@7"].opt_prefix}
-      --enable-dri3=#{gpu}
-      --enable-dri=#{gpu}
-      --enable-egl=#{gpu}
-      --enable-gallium-osmesa=#{nogpu}
-      --enable-gallium-tests=#{gpu}
-      --enable-gbm=#{gpu}
-      --enable-gles1=#{gpu}
-      --enable-gles2=#{gpu}
-      --enable-glx-tls=#{gpu}
-      --enable-glx=#{gpu}
-      --enable-osmesa=#{gpu}
-      --enable-sysfs=#{gpu}
-      --enable-texture-float=#{gpu}
-      --enable-va=#{gpu}
-      --enable-vdpau=#{gpu}
-      --enable-xa=#{gpu}
-      --enable-xvmc=#{gpu}
+      -Dprefix=#{prefix}
+      -Dsysconfdir=#{etc}
+      -Dlocalstatedir=#{var}
+      -Dllvm=true
+      -Dshared-llvm=false
+      -Dplatforms=#{platforms}
+      -Ddri3=#{gpu}
+      -Ddri-drivers=#{dri_drivers}
+      -Dgallium-drivers=#{gallium_drivers}
+      -Degl=#{gpu}
+      -Dosmesa=none
+      -Dgbm=#{gpu}
+      -Dopengl=#{gpu}
+      -Dgles1=#{gpu}
+      -Dgles2=#{gpu}
+      -Dglx=#{glx}
+      -Dxvmc=#{gpu}
+      -Dtools=all
     ]
+    # -Dglvnd=true # fails to build (after some time)
+    # -Dvulkan-overlay-layer=true # fails to build (quickly)
 
-    if build.with? "gpu"
-      args += %W[
-        --with-platforms=drm,x11,surfaceless#{build.with?("wayland") ? ",wayland" : ""}
-        --with-gallium-drivers=i915,nouveau,r300,r600,radeonsi,svga,swrast,swr
-        --with-dri-drivers=i965,nouveau,radeon,r200,swrast
-      ]
-    else
-      args += %w[
-        --with-platforms=
-        --with-gallium-drivers=swrast,swr
-        --with-dri-drivers=
-      ]
-    end
+    ENV.append "PKG_CONFIG_PATH", Formula["libva-internal"].opt_lib/"pkgconfig"
 
-    # Possible gallium drivers:
-    # ddebug,etnaviv,freedreno,i915,imx,llvmpipe,noop,nouveau,pl111,r300,r600,radeon,radeonsi,rbug,softpipe,svga,swr,trace,vc4,virgl
-
-    # enable-opencl => needs libclc
-    # enable-gallium-osmesa => mutually exclusive with enable-osmesa
-
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
-    args << "--enable-libglvnd" if build.with? "libglvnd"
-
-    inreplace "bin/ltmain.sh", /.*seems to be moved"/, '#\1seems to be moved"'
-
-    system "./autogen.sh", *args
-    system "make"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}" if build.with? "gpu"
-    system "make", "check" if build.with?("test")
-    system "make", "install"
-    system "make", "-C", "xdemos", "DEMOS_PREFIX=#{prefix}", "install" if build.with? "gpu"
-
-    if build.with? "libva"
-      resource("libva").stage do
-        libvaargs = %W[
-          --prefix=#{Formula["libva"].opt_prefix}
-          --sysconfdir=#{Formula["libva"].opt_prefix}/etc
-          --localstatedir=#{Formula["libva"].opt_prefix}/var
-          --disable-dependency-tracking
-          --disable-silent-rules
-          --enable-static=#{build.with?("static") ? "yes" : "no"}
-        ]
-
-        ### Set environment flags:
-        # $ pkg-config --cflags egl | tr ' ' '\n'
-        # $ pkg-config --cflags gl  | tr ' ' '\n'
-        ENV["EGL_CFLAGS"] = "-I#{include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libdrm"].opt_include}/libdrm"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libx11"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxau"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxcb"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdamage"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxdmcp"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxext"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxfixes"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["libxxf86vm"].opt_include}"
-        ENV.append "EGL_CFLAGS", "-I#{Formula["xorgproto"].opt_include}"
-
-        ENV["GLX_CFLAGS"] = ENV["EGL_CFLAGS"]
-
-        ENV["EGL_LIBS"] = "-L#{lib} -lEGL"
-        ENV["GLX_LIBS"] = "-L#{lib} -lGL"
-
-        system "autoreconf", "-fi" if build.without? "wayland" # needed only if Wayland is not installed
-        system "./configure", *libvaargs
-        system "make"
-        system "make", "install"
-      end
+    mkdir "build" do
+      system "meson", *args
+      system "ninja"
+      system "ninja", "install"
     end
   end
 
