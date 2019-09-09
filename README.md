@@ -1,86 +1,65 @@
 # Linuxbrew Xorg
 
 
-[Xorg libraries](http://www.x.org/wiki/guide/client-ecosystem/) for Linuxbrew users
+[Xorg libraries][xorg-libs] for Homebrew on Linux.
 
-## Install
+## How to use
 
-```bash
-brew tap linuxbrew/homebrew-xorg &&
-brew install xorg
+First, you need to "tap" this repository with
+
+```sh
+brew tap linuxbrew/xorg
 ```
 
-This will install (all) Xorg libraries. To see the progress of the installation, enable verbose messaging by providing the `-v` (`--verbose`) flag:
+and then you can either install the entire suite of libraries (not recommended) with:
 
-```bash
-brew install -v xorg
+```sh
+brew install linuxbrew/xorg/xorg
 ```
 
-You can also install individual libraries/packages  provided in this tap by running
+or install individual libraries, for example:
 
-```bash
-brew install <formula-name>
+```sh
+brew install linuxbrew/xorg/libx11 linuxbrew/xorg/mesa
 ```
 
-## Requirements
+## About this tap
 
-Main dependencies of the Xorg libraries are:
-  * `pkg-config`: to build packages from source
-  * `fontconfig`: required by `libxft`
-  * `freetype`:   required by `libxfont`
-  * `python`:     required by `xcb-proto`
+Installation proceeds according to the instructions from [Linux From Scratch][lfs].
 
-To build documentation (enabled with `--with-docs` flag), the following packages are required:
-  * `xorg-sgml-doctools`
-  * `xmlto`
-  * `fop`<sup>1</sup>
-  * `libxslt`
-  * `asciidoc`
-  * `w3m`<sup>2</sup>
+You _can_ build static libraries using `--with-static` flag, though this is neither required nor recommended, _i.e._:
 
-*1*: reciprocal dependency is not resolved at the present time but it does not affect the build process
-<br>
-*2*: Not used at the moment
-
-## Details
-
-Installation proceeds according to the instructions from [Linux From Scratch](http://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.html)
-
-To build documentation, use `--with-docs` flag, _i.e._:
-
-```bash
-brew install xorg --with-docs
-```
-
-This will install `xorg-docs` package and enable the following dependencies: `fop`, `libxslt`, `xmlto`. 
-There is an additional dependency on `asciidoc` for `inputproto` and `libxi` packages.
-
-To see the list of optional flags when compiling libraries with documentation, use:
-
-```bash
-brew info xorg --with-docs
-```
-
-When building packages from source code, compile-time tests are enabled by default.
-To skip then, use `--without-test` flag, _i.e._:
-
-```bash
-brew install xorg --build-from-source --without-test
-```
-
-You can also build static libraries (though, this is neither required nor recommended) using `--with-static` flag, _i.e._:
-
-```bash
+```sh
 brew install xorg --with-static
 ```
 
-You can combine (all) of the above options (flags), _i.e._:
+## How to contribute
 
-```bash
-brew install xorg --with-docs
+### Out-of-date formula
+
+Submit a Pull Request!
+
+If you have `hub` installed (`brew install hub` if you don't) and set up,
+you can do this in one step:
+
+```sh
+brew bump-formula-pr --url=NEW-URL linuxbrew/xorg/FORMULA
 ```
 
-## Issues / Ongoing work
+### No formula
 
-* Reciprocal dependency with `fop` is not resolved. As a result, not all documentation might be built.
-* Provide other Xorg packages
+Submit a Pull Request!
+
+Please feel free to submit pull requests to add new formulae to this tap.
+The goal of this repo is to be a one-stop shop for all X11-related needs of Homebrew on Linux.
+
+### Incomplete Documentation
+
+Submit a Pull Request!
+
+### Something else
+
+Please report any issues using... well, GitHub Issues!
+
+[lfs]: http://www.linuxfromscratch.org/blfs/view/stable/x/x7lib.html
+[xorg-libs]: http://www.x.org/wiki/guide/client-ecosystem
