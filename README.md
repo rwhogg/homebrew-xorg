@@ -30,7 +30,7 @@ Installation proceeds according to the instructions from [Linux From Scratch][lf
 You _can_ build static libraries using `--with-static` flag, though this is neither required nor recommended, _i.e._:
 
 ```sh
-brew install xorg --with-static
+brew install linuxbrew/xorg/xorg --with-static
 ```
 
 ## How to contribute
