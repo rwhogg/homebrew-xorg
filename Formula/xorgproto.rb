@@ -3,12 +3,14 @@ class Xorgproto < Formula
   homepage "https://www.x.org/"
   url "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2019.2.tar.bz2"
   sha256 "46ecd0156c561d41e8aa87ce79340910cdf38373b759e737fcbba5df508e7b8e"
-  head "git://anongit.freedesktop.org/git/xorg/proto/xorgproto"
+  head "https://gitlab.freedesktop.org/xorg/proto/xorgproto"
 
   bottle do
     cellar :any_skip_relocation
     sha256 "d20a913e95276e66afe2ecd7f6e25c8006c00f8e3aa9420e01f3d89e630fcc51" => :x86_64_linux
   end
+
+  option "with-legacy-headers", "Install legacy protocol headers"
 
   if build.head?
     depends_on "autoconf" => :build
@@ -26,6 +28,7 @@ class Xorgproto < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
+    args << "--enable-legacy" if build.with? "legacy-headers"
 
     if build.head?
       ENV["NOCONFIGURE"] = "1"
