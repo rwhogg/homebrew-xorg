@@ -58,14 +58,12 @@ jobs:
         run: |
           mkdir /bottles
           cd /bottles
-          brew test-bot --tap=linuxbrew/xorg --bintray-org=linuxbrew --skip-recursive-dependents
-
-          if [[ $? -eq 0 ]]
-          then
-              echo ::set-output name=status::success
-          else
-              echo ::set-output name=status::failure
-          fi
+          brew test-bot \
+              --tap=linuxbrew/xorg \
+              --bintray-org=linuxbrew \
+              --skip-recursive-dependents \
+          && echo ::set-output name=status::success \
+          || echo ::set-output name=status::failure
 
           echo ::set-output name=nbottles::$(shopt -s nullglob; set -- ./*x86_64_linux.bottle*tar.gz ; echo $#)
 
