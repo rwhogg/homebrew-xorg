@@ -65,7 +65,7 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "http://www.linuxfromscratch.org/patches/blfs/svn/mesa-19.2.1-add_xdemos-1.patch"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/mesa-add_xdemos-1.patch"
     sha256 "f7fcde1ca64e5be6a1abc73851e0d156cc227328c58cd9cbac47963e5b9631ad"
   end
 
