@@ -84,8 +84,6 @@ jobs:
         id: upload_bottles
         if: steps.main_test.outputs.nbottles > 0
         shell: bash
-        env:
-          UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
         run: |
           cd $GITHUB_WORKSPACE/bottles
           brew test-bot \
@@ -98,6 +96,7 @@ jobs:
         env:
           HOMEBREW_BINTRAY_USER: ${{secrets.BINTRAY_USER}}
           HOMEBREW_BINTRAY_KEY: ${{secrets.BINTRAY_KEY}}
+          UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
 
       - name: Report back to the PR
         shell: bash
