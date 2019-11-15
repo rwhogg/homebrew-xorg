@@ -84,6 +84,8 @@ jobs:
         id: upload_bottles
         if: steps.main_test.outputs.nbottles > 0
         shell: bash
+        env:
+          UPSTREAM_PULL_REQUEST: ${{github.event.pull_request.number}}
         run: |
           cd $GITHUB_WORKSPACE/bottles
           brew test-bot \
