@@ -10,7 +10,6 @@ class XcbUtilRenderutil < Formula
     sha256 "e6452ef548b8135234cbea14e8105432c414eb4099db2483803456109d93398b" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "doxygen" => :build if build.with? "docs"
@@ -25,7 +24,6 @@ class XcbUtilRenderutil < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("docs") ? "yes" : "no"}
       --with-doxygen=#{build.with?("docs") ? "yes" : "no"}
     ]

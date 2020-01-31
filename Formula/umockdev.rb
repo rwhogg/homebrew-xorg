@@ -9,8 +9,6 @@ class Umockdev < Formula
     sha256 "360ab5cd8eaf78cd23b8307eb28c107fd377c5eb4d9b21c877c391a58f6229a3" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
-
   depends_on "gobject-introspection" => [:recommended, :build]
   depends_on "gphoto2" => [:recommended, :build]
   depends_on "gtk-doc" => [:recommended, :build]

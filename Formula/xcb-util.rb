@@ -9,8 +9,6 @@ class XcbUtil < Formula
     sha256 "c9b90cb2c9fa611e3b5d31a52d544fd6a173fc33cfd6f057f876ab7112bac179" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
-
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libxcb"
 
@@ -22,7 +20,6 @@ class XcbUtil < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-    args << "--disable-static" if build.without?("static")
 
     system "./configure", *args
     system "make"

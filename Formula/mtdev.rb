@@ -10,7 +10,6 @@ class Mtdev < Formula
     sha256 "32778f8b518f949bd06e4ec20c3d9d0915febaedfb01011c7ab936076d88cd51" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   depends_on "pkg-config" => :build
 
   def install
@@ -21,9 +20,6 @@ class Mtdev < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"

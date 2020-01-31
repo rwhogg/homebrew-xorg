@@ -12,7 +12,6 @@ class Libxcb < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
   depends_on "linuxbrew/xorg/xcb-proto" => :build
@@ -44,7 +43,6 @@ class Libxcb < Formula
       --enable-selinux
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("devel-docs") ? "yes" : "no"}
       --with-doxygen=#{build.with?("devel-docs") ? "yes" : "no"}
     ]

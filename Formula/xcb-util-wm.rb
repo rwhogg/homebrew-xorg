@@ -10,7 +10,6 @@ class XcbUtilWm < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "doxygen" => :build if build.with? "docs"
@@ -25,7 +24,6 @@ class XcbUtilWm < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("docs") ? "yes" : "no"}
       --with-doxygen=#{build.with?("docs") ? "yes" : "no"}
     ]

@@ -14,7 +14,6 @@ class Wayland < Formula
     url "git://anongit.freedesktop.org/wayland/wayland"
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
 
   depends_on "pkg-config" => :build
@@ -31,7 +30,6 @@ class Wayland < Formula
       --disable-dependency-tracking
       --disable-silent-rules
       --disable-documentation
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     if build.head?

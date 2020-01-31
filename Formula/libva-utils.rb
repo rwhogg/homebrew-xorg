@@ -9,8 +9,6 @@ class LibvaUtils < Formula
     sha256 "e4519a7d1d1c4192ad178dd2555dbc2d4f67416567fa55c50e69debe0b19efb2" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
-
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libva"
   depends_on "linuxbrew/xorg/libx11"
@@ -27,7 +25,6 @@ class LibvaUtils < Formula
       --enable-x11
       --enable-wayland
       --enable-tests=yes
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

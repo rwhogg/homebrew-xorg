@@ -9,7 +9,6 @@ class Libvdpau < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
   depends_on "pkg-config" => :build
@@ -28,7 +27,6 @@ class Libvdpau < Formula
       --sysconfdir=#{etc}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-documentation=#{build.with?("docs") ? "yes" : "no"}
       --enable-dri2
     ]

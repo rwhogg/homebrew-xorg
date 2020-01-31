@@ -11,7 +11,6 @@ class Libice < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
   option "with-specs", "Build specifications"
 
@@ -40,7 +39,6 @@ class Libice < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-docs=#{build.with?("docs") ? "yes" : "no"}
       --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]

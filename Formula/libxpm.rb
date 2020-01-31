@@ -10,7 +10,6 @@ class Libxpm < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "gettext" => :build
   depends_on "pkg-config" => :build
@@ -23,7 +22,6 @@ class Libxpm < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

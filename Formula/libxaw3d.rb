@@ -12,7 +12,6 @@ class Libxaw3d < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "without-multiplane-bitmaps", "Build without multiplane bitmaps"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
@@ -32,7 +31,6 @@ class Libxaw3d < Formula
       --disable-silent-rules
       --enable-gray-stipples
       --enable-arrow-scrollbars
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
     args << "--enable-multiplane-bitmaps" if build.with? "multiplane-bitmaps"
 

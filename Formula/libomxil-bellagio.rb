@@ -11,7 +11,6 @@ class LibomxilBellagio < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
 
   depends_on "doxygen" => :build if build.with? "docs"
@@ -24,7 +23,6 @@ class LibomxilBellagio < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --enable-doc=#{build.with?("docs") ? "yes" : "no"}
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

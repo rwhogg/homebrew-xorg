@@ -10,7 +10,6 @@ class Libevdev < Formula
     sha256 "08d21f1843c9b17113b4b349098ac762d14222e1f1028302115ff537e82b048b" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   option "without-test", "Skip compile-time tests"
   option "with-python@2", "Build with Python 2"
 
@@ -26,7 +25,6 @@ class Libevdev < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

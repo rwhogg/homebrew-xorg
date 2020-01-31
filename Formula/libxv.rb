@@ -11,7 +11,6 @@ class Libxv < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
   depends_on "pkg-config" => :build
@@ -26,7 +25,6 @@ class Libxv < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

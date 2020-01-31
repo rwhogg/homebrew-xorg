@@ -9,7 +9,6 @@ class Libdrm < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "cairo" => :build if build.with? "test"
   depends_on "cunit" => :build if build.with? "test"
@@ -31,7 +30,6 @@ class Libdrm < Formula
       --enable-cairo-tests
       --enable-manpages
       --enable-valgrind=#{build.with?("valgrind") ? "yes" : "no"}
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     # ensure we can find the docbook XML tags

@@ -10,7 +10,6 @@ class Libx11 < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-specs", "Build specifications"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
@@ -39,7 +38,6 @@ class Libx11 < Formula
       --enable-local-transport
       --enable-loadable-i18n
       --enable-xthreads
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
 

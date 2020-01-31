@@ -11,7 +11,6 @@ class Libxxf86vm < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libx11"
@@ -25,7 +24,6 @@ class Libxxf86vm < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

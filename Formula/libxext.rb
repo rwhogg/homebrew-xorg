@@ -11,7 +11,6 @@ class Libxext < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-specs", "Build specifications"
 
   depends_on "pkg-config" => :build
@@ -38,7 +37,6 @@ class Libxext < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-specs=#{build.with?("specs") ? "yes" : "no"}
     ]
 

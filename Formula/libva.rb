@@ -10,7 +10,6 @@ class Libva < Formula
     sha256 "32da96f256bd627e69dee7a0bc1e572af08c0b9c6ba6a8c71ad178f8beb6bc40" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Build documentation"
   # option "with-eglx", "Build libva with egl and glx support (use after building mesa)"
   # Trivia: there is a circular dependency with Mesa.
@@ -39,7 +38,6 @@ class Libva < Formula
       --enable-glx=no
       --enable-wayland
       --enable-docs=#{build.with?("docs") ? "yes" : "no"}
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

@@ -12,7 +12,6 @@ class Libglvnd < Formula
 
   option "without-asm", "Build without assembly"
   option "without-tls", "Build without TLS support"
-  option "with-static", "Build static libraries (not recommended)"
 
   depends_on "linuxbrew/xorg/libpthread-stubs" => :build
   depends_on "linuxbrew/xorg/libxext" => :build
@@ -35,7 +34,6 @@ class Libglvnd < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-asm=#{build.with?("asm") ? "yes" : "no"}
       --enable-tls=#{build.with?("tls") ? "yes" : "no"}
     ]

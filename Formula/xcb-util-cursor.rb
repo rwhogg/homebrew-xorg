@@ -8,7 +8,6 @@ class XcbUtilCursor < Formula
     sha256 "f0251ad8e00a8cd1d05d6a8e06cb46ee52b799b4f9e0fffa91e4a23a7d351a94" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
   option "with-docs", "Regenerate documentation (requires doxygen)"
 
   depends_on "doxygen" => :build if build.with? "docs"
@@ -25,7 +24,6 @@ class XcbUtilCursor < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("docs") ? "yes" : "no"}
       --with-doxygen=#{build.with?("docs") ? "yes" : "no"}
     ]

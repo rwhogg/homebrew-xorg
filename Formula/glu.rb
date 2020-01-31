@@ -9,13 +9,8 @@ class Glu < Formula
     sha256 "7f3743002c4472585848e401c6c9631b33b8386e6c4c19b622a9c9f9afadae95" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
-
-  # Build-time
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
-
-  # Required
   depends_on "linuxbrew/xorg/mesa"
 
   def install
@@ -24,9 +19,6 @@ class Glu < Formula
       --disable-dependency-tracking
       --disable-silent-rules
     ]
-
-    # Be explicit about the configure flags
-    args << "--enable-static=#{build.with?("static") ? "yes" : "no"}"
 
     system "./configure", *args
     system "make"

@@ -8,8 +8,6 @@ class LibvaIntelDriver < Formula
     sha256 "5d6cb7e16619d29f46d47d218304b8104f10c01b139470e298d98d6cc46faec5" => :x86_64_linux
   end
 
-  option "with-static", "Build static libraries (not recommended)"
-
   depends_on "linuxbrew/xorg/libva" => :build
   depends_on "pkg-config" => :build
   depends_on "linuxbrew/xorg/libdrm"
@@ -25,7 +23,6 @@ class LibvaIntelDriver < Formula
       --enable-wayland
       --enable-hybrid-codec
       --enable-tests
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
     ]
 
     system "./configure", *args

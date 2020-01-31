@@ -11,7 +11,6 @@ class Libxfont2 < Formula
   end
 
   option "without-test", "Skip compile-time tests"
-  option "with-static", "Build static libraries (not recommended)"
   option "with-devel-docs", "Build developer documentation"
 
   depends_on "linuxbrew/xorg/util-macros" => :build
@@ -41,7 +40,6 @@ class Libxfont2 < Formula
       --localstatedir=#{var}
       --disable-dependency-tracking
       --disable-silent-rules
-      --enable-static=#{build.with?("static") ? "yes" : "no"}
       --enable-devel-docs=#{build.with?("devel-docs") ? "yes" : "no"}
       --with-freetype-config=#{Formula["freetype"].opt_bin}/freetype-config
       --with-bzip2
