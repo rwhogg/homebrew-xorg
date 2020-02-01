@@ -29,11 +29,6 @@ brew install linuxbrew/xorg/libx11 linuxbrew/xorg/mesa
 
 Installation proceeds according to the instructions from [Linux From Scratch][lfs].
 
-You _can_ build static libraries using `--with-static` flag, though this is neither required nor recommended, _i.e._:
-
-```sh
-brew install linuxbrew/xorg/xorg --with-static
-```
 ### Provided formulae
 
     * bdftopcf                     * encodings                    * glu                          * iceauth
