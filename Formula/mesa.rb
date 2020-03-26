@@ -66,7 +66,7 @@ class Mesa < Formula
   end
 
   patch :p1 do
-    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/master/Patches/mesa-add_xdemos-1.patch"
+    url "https://raw.githubusercontent.com/Linuxbrew/homebrew-xorg/1c3ab4ba34b7f3b9a64061f98271af25da2e84df/Patches/mesa-add_xdemos-1.patch"
     sha256 "f7fcde1ca64e5be6a1abc73851e0d156cc227328c58cd9cbac47963e5b9631ad"
   end
 
