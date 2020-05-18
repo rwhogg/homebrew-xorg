@@ -31,7 +31,9 @@ class Libwacom < Formula
     Dir.chdir prefix/"test"
     Dir["tests/*"].each do |t|
       name = File.basename(t)
-      system("bash", "test-driver", "--test-name", name, "--log-file", testpath/"#{name}.log", "--trs-file", testpath/"#{name}.trs", t)
+      system "bash", "test-driver", "--test-name", name,
+             "--log-file", testpath/"#{name}.log",
+             "--trs-file", testpath/"#{name}.trs", t
     end
   end
 end
