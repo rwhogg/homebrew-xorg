@@ -31,8 +31,4 @@ class Encodings < Formula
     system "make"
     system "make", "install"
   end
-
-  # def post_install
-  #   (Formula["font-util"].share/"fonts/X11/encodings").install_symlink Dir[share/"fonts/X11/encodings/*"].select { |f| "fonts.dir" != f }
-  # end
 end
