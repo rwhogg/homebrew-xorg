@@ -5,8 +5,9 @@ class Libgudev < Formula
   sha256 "587c4970eb23f4e2deee2cb1fb7838c94a78c578f41ce12cac0a3f4a80dabb03"
 
   bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
     cellar :any_skip_relocation
-    sha256 "04f5bb2fd056fecf62ad422abfd194ad9d3c017faa512d9b3d296f986fc21869" => :x86_64_linux
+    sha256 "f11f69ae79e8d89a5d579e64c8ec196c3f5dd0b6bb8bef3435cd8b69db167240" => :x86_64_linux
   end
 
   depends_on "gobject-introspection" => [:recommended, :build]
