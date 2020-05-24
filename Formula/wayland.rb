@@ -5,6 +5,13 @@ class Wayland < Formula
   sha256 "4675a79f091020817a98fd0484e7208c8762242266967f55a67776936c2e294d"
   revision 1
 
+  bottle do
+    root_url "https://linuxbrew.bintray.com/bottles-xorg"
+    cellar :any_skip_relocation
+    rebuild 1
+    sha256 "d3bfcf08a75e5af6c9040577eb4a62e7cb9026446f1016166695bb1371a82e12" => :x86_64_linux
+  end
+
   head do
     url "git://anongit.freedesktop.org/wayland/wayland"
   end
