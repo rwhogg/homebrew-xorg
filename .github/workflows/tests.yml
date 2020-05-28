@@ -32,7 +32,7 @@ jobs:
       image: homebrew/ubuntu16.04:master
     steps:
       - name: Update homebrew
-        uses: brew update-reset
+        run: brew update-reset
 
       - name: Check out tap
         uses: actions/checkout@v2
