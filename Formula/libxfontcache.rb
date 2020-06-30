@@ -2,7 +2,7 @@
 class Libxfontcache < Formula
   desc "X.Org Libraries: libXfontCache"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive//individual/lib/libXfontcache-1.0.5.tar.gz"
+  url "https://www.x.org/archive/individual/lib/libXfontcache-1.0.5.tar.gz"
   sha256 "fdba75307a0983d2566554e0e9effa7079551f1b7b46e8de642d067998619659"
 
   bottle do
