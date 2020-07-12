@@ -14,7 +14,7 @@ class XcbProto < Formula
   option "without-test", "Skip compile-time tests"
 
   depends_on "libxml2" => :build if build.with? "test"
-  depends_on "pkg-config" => :build
+  depends_on "pkg-config" => [:build, :test]
   depends_on "python@3.8" => :build
 
   def install
@@ -30,5 +30,9 @@ class XcbProto < Formula
     system "make"
     system "make", "check" if build.with? "test"
     system "make", "install"
+  end
+
+  test do
+    assert_equal "#{share}/xcb", shell_output("pkg-config --variable=xcbincludedir xcb-proto").chomp
   end
 end
