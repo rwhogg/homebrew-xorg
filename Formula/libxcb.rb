@@ -3,6 +3,7 @@ class Libxcb < Formula
   homepage "https://www.x.org/" ### http://www.linuxfromscratch.org/blfs/view/svn/x/x7lib.html
   url "https://xcb.freedesktop.org/dist/libxcb-1.13.1.tar.bz2"
   sha256 "a89fb7af7a11f43d2ce84a844a4b38df688c092bf4b67683aef179cdf2a647c4"
+  revision 1
   # tag "linuxbrew"
 
   livecheck do
@@ -21,7 +22,7 @@ class Libxcb < Formula
 
   depends_on "linuxbrew/xorg/xcb-proto" => :build
   depends_on "pkg-config" => :build
-  depends_on "python" => :build
+  depends_on "python@3.8" => :build
   depends_on "linuxbrew/xorg/libpthread-stubs" # xcb.pc references pthread-stubs
   depends_on "linuxbrew/xorg/libxau"
   depends_on "linuxbrew/xorg/libxdmcp"
